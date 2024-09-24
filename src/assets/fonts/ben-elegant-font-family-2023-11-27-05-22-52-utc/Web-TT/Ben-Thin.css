@@ -1,0 +1,11 @@
+/* Webfont: Ben-Thin */@font-face {
+    font-family: 'BenThin';
+    src: url('Ben-Thin.eot'); /* IE9 Compat Modes */
+    src: url('Ben-Thin.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('Ben-Thin.woff') format('woff'), /* Modern Browsers */
+         url('Ben-Thin.ttf') format('truetype'); /* Safari, Android, iOS */
+             font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+

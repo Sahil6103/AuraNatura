@@ -1,0 +1,11 @@
+/* Webfont: Ben-ExtraBold */@font-face {
+    font-family: 'BenExtBd';
+    src: url('Ben-ExtraBold.eot'); /* IE9 Compat Modes */
+    src: url('Ben-ExtraBold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('Ben-ExtraBold.woff') format('woff'), /* Modern Browsers */
+         url('Ben-ExtraBold.ttf') format('truetype'); /* Safari, Android, iOS */
+             font-style: normal;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+

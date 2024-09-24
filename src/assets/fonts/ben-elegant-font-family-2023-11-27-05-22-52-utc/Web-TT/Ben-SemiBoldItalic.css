@@ -1,0 +1,11 @@
+/* Webfont: Ben-SemiBoldItalic */@font-face {
+    font-family: 'BenSemBdIta';
+    src: url('Ben-SemiBoldItalic.eot'); /* IE9 Compat Modes */
+    src: url('Ben-SemiBoldItalic.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('Ben-SemiBoldItalic.woff') format('woff'), /* Modern Browsers */
+         url('Ben-SemiBoldItalic.ttf') format('truetype'); /* Safari, Android, iOS */
+             font-style: italic;
+    font-weight: normal;
+    text-rendering: optimizeLegibility;
+}
+

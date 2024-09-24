@@ -1,0 +1,12 @@
+/* Webfont: Mirante-Bold */@font-face {
+    font-family: 'Mirante';
+    src: url('Mirante-Bold.eot'); /* IE9 Compat Modes */
+    src: url('Mirante-Bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+         url('Mirante-Bold.woff') format('woff'), /* Modern Browsers */
+         url('Mirante-Bold.woff2') format('woff2'), /* Modern Browsers */
+         url('Mirante-Bold.ttf') format('truetype'); /* Safari, Android, iOS */
+             font-style: normal;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+}
+
