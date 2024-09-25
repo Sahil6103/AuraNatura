@@ -28,7 +28,7 @@ export function AddProducts() {
             <Input
               size="lg"
               placeholder="Enter Product Title"
-              className="bg-[#e1e0e0a8] rounded-[8px]"
+              className="bg-[#efefef] rounded-[8px]"
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
@@ -44,7 +44,7 @@ export function AddProducts() {
               rows={5}
               size="lg"
               placeholder="Enter Product Description"
-              className="bg-[#e1e0e0a8] rounded-[8px]"
+              className="bg-[#efefef] rounded-[8px]"
             />
             <Typography
               variant="h6"
@@ -57,7 +57,7 @@ export function AddProducts() {
               type="text"
               size="lg"
               placeholder="Enter Product Stock"
-              className="bg-[#e1e0e0a8] rounded-[8px]"
+              className="bg-[#efefef] rounded-[8px]"
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
@@ -73,7 +73,7 @@ export function AddProducts() {
               type="text"
               size="lg"
               placeholder="Enter Product Price"
-              className=" bg-[#e1e0e0a8] rounded-[8px]"
+              className=" bg-[#efefef] rounded-[8px]"
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
@@ -87,7 +87,7 @@ export function AddProducts() {
             </Typography>
             <select
               id="category"
-              class="bg-[#e1e0e0a8] rounded-lg block w-full p-2.5 "
+              className="bg-[#efefef] rounded-lg block w-full p-2.5 "
             >
               <option selected>Select Category</option>
               <option value="US">Man</option>
@@ -102,14 +102,14 @@ export function AddProducts() {
             >
               Upload Photos
             </Typography>
-            <div class="flex items-center justify-center w-full">
+            <div className="flex items-center justify-center w-full">
               <label
                 for="dropzone-file"
-                class="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed cursor-pointer bg-gray-5 hover:bg-gray-100 bg-[#e1e0e0a6] rounded-[8px]"
+                className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed cursor-pointer bg-gray-5 hover:bg-gray-100 bg-[#efefef] rounded-[8px]"
               >
-                <div class="flex flex-col items-center justify-center pt-5 pb-6">
+                <div className="flex flex-col items-center justify-center pt-5 pb-6">
                   <svg
-                    class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400"
+                    className="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     fill="none"
@@ -123,11 +123,11 @@ export function AddProducts() {
                       d="M13 13h3a3 3 0 0 0 0-6h-.025A5.56 5.56 0 0 0 16 6.5 5.5 5.5 0 0 0 5.207 5.021C5.137 5.017 5.071 5 5 5a4 4 0 0 0 0 8h2.167M10 15V6m0 0L8 8m2-2 2 2"
                     />
                   </svg>
-                  <p class="mb-2 text-sm text-gray-500 dark:text-gray-400">
-                    <span class="font-semibold">Click to upload</span> or drag
-                    and drop
+                  <p className="mb-2 text-sm text-gray-500 dark:text-gray-400">
+                    <span className="font-semibold">Click to upload</span> or
+                    drag and drop
                   </p>
-                  <p class="text-xs text-gray-500 dark:text-gray-400">
+                  <p className="text-xs text-gray-500 dark:text-gray-400">
                     SVG, PNG, JPG or GIF
                   </p>
                 </div>

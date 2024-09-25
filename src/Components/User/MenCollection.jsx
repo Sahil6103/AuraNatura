@@ -14,7 +14,7 @@ export const MenCollection = () => {
             Elevate your style with our premium collection for men.
           </p>
         </div>
-        <div className="products grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-6">
+        <div className="products grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-16 lg:gap-10">
           <ProductCard src={ProductImg} productName="Light" price="500" />
           <ProductCard src={ProductImg} productName="Light" price="500" />
           <ProductCard src={ProductImg} productName="Light" price="500" />

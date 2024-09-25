@@ -9,7 +9,7 @@ import { StarIcon } from "hugeicons-react";
 
 export function ProductCard({ src, productName, price }) {
   return (
-    <Card className="product-card w-64 md:w-72 bg-transparent shadow-none">
+    <Card className="product-card w-64 md:w-60 bg-transparent shadow-none">
       <CardHeader shadow={false} floated={false} className="h-98 m-0">
         <img
           src={src}
@@ -17,7 +17,7 @@ export function ProductCard({ src, productName, price }) {
           className="h-full w-full object-cover"
         />
         <div className="btn absolute -bottom-full right-0 z-40 p-3 transition-all duration-300">
-          <button className="bg-[#b28a79] text-[#f0efed] py-1.5 px-[100px]">
+          <button className="bg-[#b28a79] text-[#f0efed] py-1.5 md:px-[74px]">
             Add to Cart
           </button>
         </div>
