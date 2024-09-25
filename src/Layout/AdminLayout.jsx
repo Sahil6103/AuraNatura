@@ -37,7 +37,7 @@ export const AdminLayout = () => {
         <div className="admin-main flex-1 h-screen overflow-y-auto">
           <AdminHeader toggleSidebar={toggleSidebar} />
 
-          <div className="p-6 h-screen bg-[#f5f3f3]">
+          <div className="p-6 h-auto bg-[#f5f3f3]">
             <Outlet />
           </div>
         </div>

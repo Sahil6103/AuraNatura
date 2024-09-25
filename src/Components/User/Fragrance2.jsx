@@ -4,7 +4,7 @@ import { Fragrance2Img } from "../../assets/index";
 export const Fragrance2 = () => {
   return (
     <>
-      <div className="fragrance flex flex-col md:flex-row justify-center items-center gap-6 px-6 md:px-10 py-8 md:py-10">
+      <div className="fragrance flex flex-col md:flex-row justify-center items-center gap-6 px-5 md:px-10 py-8 md:py-10 md:pb-20">
         <div className="right w-full md:w-6/12 order-2 md:order-1">
           <div className="context flex flex-col justify-start items-start gap-3">
             <span className="text-[1.3rem]">Our Original Perfumes</span>
@@ -20,7 +20,7 @@ export const Fragrance2 = () => {
               expectations and invites us to explore the beauty of the
               unexpected.
             </p>
-            <button className="bg-[#b48b5e] px-8 p-2 text-[1.1rem] mt-8">
+            <button className="bg-[#b48b5e] text-[#f0efed] px-8 p-2 text-[1.1rem] mt-8">
               Shop Now
             </button>
           </div>

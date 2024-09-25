@@ -4,7 +4,7 @@ import { FragranceImg } from "../../assets/index";
 export const Fragrance = () => {
   return (
     <>
-      <div className="fragrance flex flex-col md:flex-row justify-center items-center gap-6 px-6 md:px-10 py-8 md:py-10">
+      <div className="fragrance flex flex-col md:flex-row justify-center items-center gap-6 px-5 md:px-10 py-8 md:pt-20 md:pb-8">
         <div className="left w-full md:w-3/12">
           <img src={FragranceImg} alt="" className="w-full" />
         </div>
@@ -21,7 +21,7 @@ export const Fragrance = () => {
               transcends time. Let each fragrance become a signature of elegance
               in your everyday moments.
             </p>
-            <button className="bg-[#b48b5e] px-8 p-2 text-[1.1rem] mt-8">
+            <button className="bg-[#b48b5e] text-[#f0efed] px-8 p-2 text-[1.1rem] mt-8">
               Shop Now
             </button>
           </div>

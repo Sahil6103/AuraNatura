@@ -16,7 +16,7 @@ export function AddProducts() {
         shadow={true}
         className="w-full md:w-[80%] lg:w-[60%] px-6 md:px-10 rounded-lg"
       >
-        <form className="mt-8 mb-2">
+        <form className="py-8">
           <div className="mb-1 flex flex-col gap-6">
             <Typography
               variant="h6"
@@ -90,9 +90,9 @@ export function AddProducts() {
               class="bg-[#e1e0e0a8] rounded-lg block w-full p-2.5 "
             >
               <option selected>Select Category</option>
-              <option value="US">Electronics</option>
-              <option value="CA">Clothes</option>
-              <option value="FR">Kitchen</option>
+              <option value="US">Man</option>
+              <option value="CA">Woman</option>
+              <option value="FR">Exclusive</option>
             </select>
 
             <Typography

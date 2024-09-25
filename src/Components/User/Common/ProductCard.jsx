@@ -2,48 +2,42 @@ import {
   Card,
   CardHeader,
   CardBody,
-  CardFooter,
   Typography,
-  Button,
 } from "@material-tailwind/react";
 
-export function ProductCard() {
+import { StarIcon } from "hugeicons-react";
+
+export function ProductCard({ src, productName, price }) {
   return (
-    <Card className="w-96">
-      <CardHeader shadow={false} floated={false} className="h-96">
+    <Card className="product-card w-64 md:w-72 bg-transparent shadow-none">
+      <CardHeader shadow={false} floated={false} className="h-98 m-0">
         <img
-          src="https://images.unsplash.com/photo-1629367494173-c78a56567877?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=927&q=80"
+          src={src}
           alt="card-image"
           className="h-full w-full object-cover"
         />
-      </CardHeader>
-      <CardBody>
-        <div className="mb-2 flex items-center justify-between">
-          <Typography color="blue-gray" className="font-medium">
-            Apple AirPods
-          </Typography>
-          <Typography color="blue-gray" className="font-medium">
-            $95.00
-          </Typography>
+        <div className="btn absolute -bottom-full right-0 z-40 p-3 transition-all duration-300">
+          <button className="bg-[#b28a79] text-[#f0efed] py-1.5 px-[100px]">
+            Add to Cart
+          </button>
         </div>
-        <Typography
-          variant="small"
-          color="gray"
-          className="font-normal opacity-75"
-        >
-          With plenty of talk and listen time, voice-activated Siri access, and
-          an available wireless charging case.
-        </Typography>
-      </CardBody>
-      <CardFooter className="pt-0">
-        <Button
-          ripple={false}
-          fullWidth={true}
-          className="bg-blue-gray-900/10 text-blue-gray-900 shadow-none hover:scale-105 hover:shadow-none focus:scale-105 focus:shadow-none active:scale-100"
-        >
+      </CardHeader>
+      <CardBody className="bg-transparent px-3 py-2 flex flex-col gap-3">
+        <div className="">
+          <Typography className="text-[1.3rem]">{productName}</Typography>
+        </div>
+        <div className="stars flex gap-[2px] -mt-1">
+          <StarIcon color="black" size={16} className="" />
+          <StarIcon color="black" size={16} className="" />
+          <StarIcon color="black" size={16} className="" />
+          <StarIcon color="black" size={16} className="" />
+          <StarIcon color="black" size={16} className="" />
+        </div>
+        <Typography className="text-[1.2rem]">&#8377;{price}/-</Typography>
+        <button className="bg-[#b28a79] text-[#f0efed] py-1.5 mt-1 md:hidden">
           Add to Cart
-        </Button>
-      </CardFooter>
+        </button>
+      </CardBody>
     </Card>
   );
 }
