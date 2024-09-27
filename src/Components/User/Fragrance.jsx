@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FragranceImg } from "../../assets/index";
 
 export const Fragrance = () => {
@@ -21,9 +22,12 @@ export const Fragrance = () => {
               transcends time. Let each fragrance become a signature of elegance
               in your everyday moments.
             </p>
-            <button className="bg-[#b48b5e] text-[#f0efed] px-8 p-2 text-[1.1rem] mt-8">
+            <Link
+              to="/woman-collection"
+              className="bg-[#b48b5e] text-[#f0efed] border-2 border-[#b48b5e] px-8 p-2 text-[1.1rem] mt-8 hover:bg-transparent hover:border-2 hover:border-[#b48b5e] hover:text-[#b48b5e] transition-all duration-300"
+            >
               Shop Now
-            </button>
+            </Link>
           </div>
         </div>
       </div>

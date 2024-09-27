@@ -23,9 +23,21 @@ export const Footer = () => {
             <h1 className="text-[1.6rem]">Quick Links</h1>
           </div>
           <div className="links flex flex-col gap-2 text-[1.1rem] mt-3">
-            <Link>About Us</Link>
-            <Link>Contact Us</Link>
-            <Link>Features</Link>
+            <Link
+              to="/about-us"
+              className="hover:text-[#b48b5e] transition-all duration-300"
+            >
+              About Us
+            </Link>
+            <Link
+              to="/contact-us"
+              className="hover:text-[#b48b5e] transition-all duration-300"
+            >
+              Contact Us
+            </Link>
+            <Link className="hover:text-[#b48b5e] transition-all duration-300">
+              Features
+            </Link>
           </div>
         </div>
         <div className="useful-links">
@@ -33,9 +45,24 @@ export const Footer = () => {
             <h1 className="text-[1.6rem]">Useful Links</h1>
           </div>
           <div className="links flex flex-col gap-2 text-[1.1rem] mt-3">
-            <Link>Male Collection</Link>
-            <Link>Female Collection</Link>
-            <Link>Excludive Collection</Link>
+            <Link
+              to="/man-collection"
+              className="hover:text-[#b48b5e] transition-all duration-300"
+            >
+              Man Collection
+            </Link>
+            <Link
+              to="/woman-collection"
+              className="hover:text-[#b48b5e] transition-all duration-300"
+            >
+              Woman Collection
+            </Link>
+            <Link
+              to="/exclusive-collection"
+              className="hover:text-[#b48b5e] transition-all duration-300"
+            >
+              Excludive Collection
+            </Link>
           </div>
         </div>
         <div className="social-links">
@@ -43,15 +70,15 @@ export const Footer = () => {
             <h1 className="text-[1.6rem]">Follow Us</h1>
           </div>
           <div className="links flex flex-col gap-2 text-[1.1rem] mt-3">
-            <Link className="flex justify-start items-center gap-2">
+            <Link className="flex justify-start items-center gap-2 hover:text-[#b48b5e] transition-all duration-300">
               <Facebook02Icon color="black" size={22} />
               <span>Facebook</span>
             </Link>
-            <Link className="flex justify-start items-center gap-2">
+            <Link className="flex justify-start items-center gap-2 hover:text-[#b48b5e] transition-all duration-300">
               <InstagramIcon color="black" size={22} />
               <span>Instagram</span>
             </Link>
-            <Link className="flex justify-start items-center gap-2">
+            <Link className="flex justify-start items-center gap-2 hover:text-[#b48b5e] transition-all duration-300">
               <NewTwitterIcon color="black" size={22} />
               <span>Twitter (X)</span>
             </Link>

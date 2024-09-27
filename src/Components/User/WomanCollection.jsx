@@ -1,6 +1,8 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { ProductCard } from "./Common/ProductCard";
-import { ProductImg } from "../../assets/index";
+import { ManPerfume } from "../../assets/index";
+import { WomanPerfume } from "../../assets/index";
 
 export const WomanCollection = () => {
   return (
@@ -15,14 +17,17 @@ export const WomanCollection = () => {
           </p>
         </div>
         <div className="products grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-16 lg:gap-10">
-          <ProductCard src={ProductImg} productName="Light" price="500" />
-          <ProductCard src={ProductImg} productName="Light" price="500" />
-          <ProductCard src={ProductImg} productName="Light" price="500" />
-          <ProductCard src={ProductImg} productName="Light" price="500" />
+          <ProductCard src={ManPerfume} productName="Light" price="500" />
+          <ProductCard src={WomanPerfume} productName="Light" price="500" />
+          <ProductCard src={ManPerfume} productName="Light" price="500" />
+          <ProductCard src={WomanPerfume} productName="Light" price="500" />
         </div>
-        <button className="bg-[#202020] px-8 md:px-10 py-1.5 md:py-2 text-[#f0efed] text-[1.1rem]">
+        <Link
+          to="/woman-collection"
+          className="bg-[#202020] border-2 border-[#202020] px-8 md:px-10 py-1.5 md:py-2 text-[#f0efed] text-[1.1rem] hover:bg-transparent hover:text-[#202020] transition-all duration-300"
+        >
           Explore More
-        </button>
+        </Link>
       </div>
     </>
   );

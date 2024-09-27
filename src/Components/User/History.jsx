@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 export const History = () => {
   return (
@@ -28,9 +29,12 @@ export const History = () => {
             invitation to discover your own story of elegance and allure.
           </span>
         </div>
-        <button className="bg-[#b48b5e] text-[#f0efed] px-10 p-2 text-[1.1rem]">
+        <Link
+          to="about-us"
+          className="bg-[#b48b5e] border-2 border-[#b48b5e] text-[#f0efed] px-10 p-2 text-[1.1rem] hover:bg-transparent hover:text-[#b48b5e] transition-all duration-300"
+        >
           Read More
-        </button>
+        </Link>
       </div>
     </>
   );
