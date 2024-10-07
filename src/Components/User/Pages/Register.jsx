@@ -19,7 +19,7 @@ export const Register = () => {
   return (
     <>
       <HeadingBanner heading="Member Registration" page="Register" />
-      <div className="form-card flex flex-col justify-center items-center">
+      <div className="form-card flex flex-col justify-center items-center px-4">
         <div className="card bg-[#e9e9e9] flex flex-col justify-center items-center gap-12 w-full md:w-[50%] lg:w-[35%] my-16 px-5 md:px-8 lg:px-12 py-10">
           <div className="context text-center flex flex-col justify-center items-center gap-2">
             <h1 className="text-[2.3rem] text-[#b48b5e] font-bold tracking-widest">

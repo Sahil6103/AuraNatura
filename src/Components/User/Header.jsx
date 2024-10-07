@@ -33,36 +33,42 @@ export const Header = () => {
           } fixed md:static top-0 z-[100] w-full md:w-fit h-full bg-[#f0efed] md:h-auto px-10 md:px-0 flex flex-col md:flex-row justify-center md:justify-end items-start gap-y-8 md:gap-y-0 md:gap-8 transition-all duration-300 text-[1.5rem] md:text-[1.3rem]`}
         >
           <Link
+            onClick={toggleMenu}
             to="/man-collection"
             className="nav-link hover:text-[#b48b5e] transition-all duration-300"
           >
             Men
           </Link>
           <Link
+            onClick={toggleMenu}
             to="/woman-collection"
             className="nav-link hover:text-[#b48b5e] transition-all duration-300"
           >
             Woman
           </Link>
           <Link
+            onClick={toggleMenu}
             to="/exclusive-collection"
             className="nav-link hover:text-[#b48b5e] transition-all duration-300"
           >
             Exclusive
           </Link>
           <Link
+            onClick={toggleMenu}
             to="/about-us"
             className="nav-link hover:text-[#b48b5e] transition-all duration-300 md:hidden"
           >
             About Us
           </Link>
           <Link
+            onClick={toggleMenu}
             to="/contact-us"
             className="nav-link hover:text-[#b48b5e] transition-all duration-300 md:hidden"
           >
             Contact Us
           </Link>
           <Link
+            onClick={toggleMenu}
             to="/login"
             className="nav-link hover:text-[#b48b5e] transition-all duration-300 md:hidden"
           >
