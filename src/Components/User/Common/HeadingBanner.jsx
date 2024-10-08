@@ -5,7 +5,7 @@ import { Home06Icon } from "hugeicons-react";
 export const HeadingBanner = ({ heading, page }) => {
   return (
     <>
-      <div className="banner-heading relative h-[30vh] z-10 px-[30px] md:px-[150px] py-8 md:py-10">
+      <div className="banner-heading relative h-[30vh] z-10 px-[30px] md:px-[150px] py-8 md:py-16">
         <h1 className="flex justify-start items-start text-[2.2rem] md:text-[2.8rem] font-bold tracking-widest leading-[45px]">
           {heading}
         </h1>

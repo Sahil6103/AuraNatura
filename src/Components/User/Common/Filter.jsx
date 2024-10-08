@@ -8,6 +8,7 @@ import {
   Accordion,
   AccordionHeader,
   AccordionBody,
+  Checkbox,
 } from "@material-tailwind/react";
 import { ArrowDown01Icon } from "hugeicons-react";
 
@@ -59,7 +60,7 @@ export function Filter({ closeSidebar }) {
                   className="ps-6 py-3 rounded-lg hover:bg-[#ffffff2f] text-[20px]"
                   onClick={closeSidebar}
                 >
-                  Man Collections
+                  Men's Collection
                 </Link>
                 <Link
                   to="/woman-collection"
@@ -167,7 +168,7 @@ export function Filter({ closeSidebar }) {
             </AccordionBody>
           </Accordion>
         </List>
-        <button className="px-8 py-1.5 bg-[#b48b5e] text-[#e9e9e9]">
+        <button className="px-8 py-1.5 mt-5 bg-[#b48b5e] text-[#e9e9e9]">
           Apply Filter
         </button>
       </Card>
