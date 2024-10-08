@@ -86,21 +86,19 @@ export const Header = () => {
         {/* <span className="logo w-fit"> */}
         <Link
           to="/"
-          className="w-[18%] sm:w-[10%] md:w-[8%] lg:w-[6%] ms-5 md:ms-0 md:me-14 "
+          className="w-[18%] sm:w-[10%] md:w-[8%] lg:w-[6%] ms-5 md:ms-0 "
         >
           <img src={LogoIcon} alt="" />
         </Link>
         {/* </span> */}
-        <nav className="flex md:gap-6 justify-center items-center gap-3">
+        <nav className="flex md:gap-6 justify-center  md:justify-end items-center md:w-[255px]">
           <Search01Icon color="black" size={24} className="bg-transparent" />
-          <div className="icons flex gap-0 md:gap-5">
-            <Link to="/cart">
-              <ShoppingBasket01Icon color="black" size={25} />
-            </Link>
-            <Link to="/login">
-              <UserIcon color="black" size={26} className="hidden md:block" />
-            </Link>
-          </div>
+          <Link to="/cart" className="ms-3 md:ms-0">
+            <ShoppingBasket01Icon color="black" size={25} />
+          </Link>
+          <Link to="/login">
+            <UserIcon color="black" size={26} className="hidden md:block" />
+          </Link>
         </nav>
       </header>
     </>

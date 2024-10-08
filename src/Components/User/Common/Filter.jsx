@@ -20,7 +20,7 @@ export function Filter({ closeSidebar }) {
 
   return (
     <>
-      <Card className="h-screen w-[18rem] rounded-none max-w-[18rem] px-4 bg-[#f0efed] md:bg-transparent text-black flex-col shadow-none">
+      <Card className="h-screen w-[18rem] md:w-[15rem] rounded-none max-w-[18rem] md:max-w-[15rem] px-4 md:px-0 py-10 md:py-10 bg-[#f0efed] md:bg-transparent text-black flex flex-col shadow-none">
         <Typography className="text-[1.5rem] font-semibold px-3">
           Product Filters
         </Typography>
@@ -167,6 +167,9 @@ export function Filter({ closeSidebar }) {
             </AccordionBody>
           </Accordion>
         </List>
+        <button className="px-8 py-1.5 bg-[#b48b5e] text-[#e9e9e9]">
+          Apply Filter
+        </button>
       </Card>
     </>
   );
