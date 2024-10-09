@@ -61,7 +61,7 @@ export const Footer = () => {
               to="/exclusive-collection"
               className="hover:text-[#b48b5e] transition-all duration-300"
             >
-              Excludive Collection
+              Exclusive Collection
             </Link>
           </div>
         </div>

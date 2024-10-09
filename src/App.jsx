@@ -12,6 +12,7 @@ import { Men } from "./Components/User/Pages/Men";
 import { Women } from "./Components/User/Pages/Women";
 import { Exclusive } from "./Components/User/Pages/Exclusive";
 import { Cart } from "./Components/User/Pages/Cart";
+import { CheckOut } from "./Components/User/Pages/CheckOut";
 
 /* ---------------------------- Admin Components ---------------------------- */
 import { AdminLayout } from "./Layout/AdminLayout";
@@ -42,6 +43,7 @@ export const App = () => {
             <Route path="/women-collection" element={<Women />} />
             <Route path="/exclusive-collection" element={<Exclusive />} />
             <Route path="/cart" element={<Cart />} />
+            <Route path="/checkout" element={<CheckOut />} />
           </Route>
 
           {/* Admin panel routes */}
