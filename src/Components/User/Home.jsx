@@ -4,7 +4,7 @@ import { Fragrance } from "./Fragrance";
 import { Fragrance2 } from "./Fragrance2";
 import { Collection } from "./Collection";
 import { MenCollection } from "./MenCollection";
-import { WomanCollection } from "./WomanCollection";
+import { WomenCollection } from "./WomenCollection";
 import { Features } from "./Features";
 import { History } from "./History";
 
@@ -16,7 +16,7 @@ export const Home = () => {
       <Fragrance2 />
       <Collection />
       <MenCollection />
-      <WomanCollection />
+      <WomenCollection />
       <History />
       <Features />
     </>

@@ -54,28 +54,19 @@ export function Filter({ closeSidebar }) {
               </AccordionHeader>
             </ListItem>
             <AccordionBody className="p-0">
-              <List className="p-0">
-                <Link
-                  to="/man-collection"
-                  className="ps-6 py-3 rounded-lg hover:bg-[#ffffff2f] text-[20px]"
-                  onClick={closeSidebar}
-                >
-                  Men's Collection
-                </Link>
-                <Link
-                  to="/woman-collection"
-                  onClick={closeSidebar}
-                  className="ps-6 py-3 rounded-lg hover:bg-[#ffffff2f] text-[20px]"
-                >
-                  Woman Collection
-                </Link>
-                <Link
-                  to="/exclusive-collection"
-                  onClick={closeSidebar}
-                  className="ps-6 py-3 rounded-lg hover:bg-[#ffffff2f] text-[20px]"
-                >
-                  Exclusive Collection
-                </Link>
+              <List className="p-0 ps-3">
+                <div className="flex items-center">
+                  <Checkbox color="green" />
+                  <span className="text-[18px]">Men's Collection</span>
+                </div>
+                <div className="flex items-center">
+                  <Checkbox color="black" />
+                  <span className="text-[18px]">Women's Collection</span>
+                </div>
+                <div className="flex items-center">
+                  <Checkbox color="black" />
+                  <span className="text-[18px]">Exclusive Collection</span>
+                </div>
               </List>
             </AccordionBody>
           </Accordion>
@@ -108,18 +99,22 @@ export function Filter({ closeSidebar }) {
             </ListItem>
             <AccordionBody className="py-1">
               <List className="p-0">
-                <Link
-                  onClick={closeSidebar}
-                  className="ps-10 py-3 rounded-lg hover:bg-[#ffffff2f] text-[20px]"
-                >
-                  Add Category
-                </Link>
-                <Link
-                  onClick={closeSidebar}
-                  className="ps-10 py-3 rounded-lg hover:bg-[#ffffff2f] text-[20px]"
-                >
-                  Manage Category
-                </Link>
+                <div className="flex items-center">
+                  <Checkbox color="green" />
+                  <span className="text-[18px]">Below &#8377;1000</span>
+                </div>
+                <div className="flex items-center">
+                  <Checkbox color="green" />
+                  <span className="text-[18px]">&#8377;1000 - &#8377;3000</span>
+                </div>
+                <div className="flex items-center">
+                  <Checkbox color="green" />
+                  <span className="text-[18px]">&#8377;3000 - &#8377;5000</span>
+                </div>
+                <div className="flex items-center">
+                  <Checkbox color="green" />
+                  <span className="text-[18px]">Above &#8377;5000</span>
+                </div>
               </List>
             </AccordionBody>
           </Accordion>
@@ -146,29 +141,37 @@ export function Filter({ closeSidebar }) {
                   color="blue-gray"
                   className="mr-auto font-normal text-[20px]"
                 >
-                  Subcategory
+                  Size
                 </Typography>
               </AccordionHeader>
             </ListItem>
             <AccordionBody className="py-1">
               <List className="p-0">
-                <Link
-                  onClick={closeSidebar}
-                  className="ps-10 py-3 rounded-lg hover:bg-[#ffffff2f] text-[20px]"
-                >
-                  Add Subcategory
-                </Link>
-                <Link
-                  onClick={closeSidebar}
-                  className="ps-10 py-3 rounded-lg hover:bg-[#ffffff2f] text-[20px]"
-                >
-                  Manage Subcategory
-                </Link>
+                <div className="flex items-center">
+                  <Checkbox color="green" />
+                  <span className="text-[18px]">5ML</span>
+                </div>
+                <div className="flex items-center">
+                  <Checkbox color="green" />
+                  <span className="text-[18px]">10ML</span>
+                </div>
+                <div className="flex items-center">
+                  <Checkbox color="green" />
+                  <span className="text-[18px]">20ML</span>
+                </div>
+                <div className="flex items-center">
+                  <Checkbox color="green" />
+                  <span className="text-[18px]">50ML</span>
+                </div>
+                <div className="flex items-center">
+                  <Checkbox color="green" />
+                  <span className="text-[18px]">100ML</span>
+                </div>
               </List>
             </AccordionBody>
           </Accordion>
         </List>
-        <button className="px-8 py-1.5 mt-5 bg-[#b48b5e] text-[#e9e9e9]">
+        <button className="px-8 py-1.5 mt-5 bg-[#b48b5e] text-[#e9e9e9] text-[1.1rem]">
           Apply Filter
         </button>
       </Card>

@@ -46,16 +46,16 @@ export const Footer = () => {
           </div>
           <div className="links flex flex-col gap-2 text-[1.1rem] mt-3">
             <Link
-              to="/man-collection"
+              to="/men-collection"
               className="hover:text-[#b48b5e] transition-all duration-300"
             >
-              Man Collection
+              Men's Collection
             </Link>
             <Link
-              to="/woman-collection"
+              to="/women-collection"
               className="hover:text-[#b48b5e] transition-all duration-300"
             >
-              Woman Collection
+              Women's Collection
             </Link>
             <Link
               to="/exclusive-collection"

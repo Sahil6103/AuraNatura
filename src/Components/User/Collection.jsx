@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { MenCollectionImg, WomanCollectionImg } from "../../assets/index";
+import { MenCollectionImg, WomenCollectionImg } from "../../assets/index";
 
 export const Collection = () => {
   return (
     <>
       <div className="cards flex flex-col sm:flex-col md:flex-row justify-center items-center gap-5 md:gap-8 px-5 md:px-10 py-8 md:py-10">
-        <Link to="/man-collection" className="w-full lg:w-[45%] relative">
+        <Link to="/men-collection" className="w-full lg:w-[45%] relative">
           <div className="men-card">
             <img src={MenCollectionImg} alt="" />
             <div className="context absolute top-1 md:top-[20px] left-0 px-3 md:px-5 flex flex-col gap-1">
@@ -17,11 +17,11 @@ export const Collection = () => {
             </div>
           </div>
         </Link>
-        <Link to="/woman-collection" className="relative w-full lg:w-[45%]">
+        <Link to="/women-collection" className="relative w-full lg:w-[45%]">
           <div className="woman-card ">
-            <img src={WomanCollectionImg} alt="" />
+            <img src={WomenCollectionImg} alt="" />
             <div className="context absolute top-1 md:top-[20px] left-0 px-3 md:px-5 flex flex-col gap-1">
-              <h1 className="text-[2.5rem] text-[#f0efed]">For Woman</h1>
+              <h1 className="text-[2.5rem] text-[#f0efed]">For Women</h1>
               <p className="text-[#f0efed] w-[80%] md:w-[70%] text-[1.1rem] -mt-2">
                 Embrace grace and beauty with our exclusive women's collection.
               </p>

@@ -8,8 +8,8 @@ import { Login } from "./Components/User/Pages/Login";
 import { Register } from "./Components/User/Pages/Register";
 import { AboutUs } from "./Components/User/Pages/AboutUs";
 import { ContactUs } from "./Components/User/Pages/ContactUs";
-import { Man } from "./Components/User/Pages/Man";
-import { Woman } from "./Components/User/Pages/Woman";
+import { Men } from "./Components/User/Pages/Men";
+import { Women } from "./Components/User/Pages/Women";
 import { Exclusive } from "./Components/User/Pages/Exclusive";
 import { Cart } from "./Components/User/Pages/Cart";
 
@@ -38,8 +38,8 @@ export const App = () => {
             <Route path="/register" element={<Register />} />
             <Route path="/about-us" element={<AboutUs />} />
             <Route path="/contact-us" element={<ContactUs />} />
-            <Route path="/man-collection" element={<Man />} />
-            <Route path="/woman-collection" element={<Woman />} />
+            <Route path="/men-collection" element={<Men />} />
+            <Route path="/women-collection" element={<Women />} />
             <Route path="/exclusive-collection" element={<Exclusive />} />
             <Route path="/cart" element={<Cart />} />
           </Route>

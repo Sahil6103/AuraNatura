@@ -34,17 +34,17 @@ export const Header = () => {
         >
           <Link
             onClick={toggleMenu}
-            to="/man-collection"
+            to="/men-collection"
             className="nav-link hover:text-[#b48b5e] transition-all duration-300"
           >
             Men
           </Link>
           <Link
             onClick={toggleMenu}
-            to="/woman-collection"
+            to="/women-collection"
             className="nav-link hover:text-[#b48b5e] transition-all duration-300"
           >
-            Woman
+            Women
           </Link>
           <Link
             onClick={toggleMenu}
