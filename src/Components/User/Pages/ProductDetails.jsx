@@ -29,7 +29,7 @@ export const ProductDetails = () => {
                 &#8377;500.00
               </span>
             </div>
-            <p className="text-[1.1rem] w-[85%]">
+            <p className="text-[1.1rem] w-full lg:w-[85%]">
               Light by AuraNatura is a refreshing and invigorating men's
               fragrance designed to uplift and energize your senses. Crafted
               with a modern blend of bright citrus, crisp greens, and a subtle
