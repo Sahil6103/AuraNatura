@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 
 export function ProductCard({ src, productName, price }) {
   return (
-    <Link>
+    <Link to="/product-details">
       <Card className="product-card w-42 md:w-56 bg-transparent shadow-none cursor-pointer">
         <CardHeader shadow={false} floated={false} className="h-98 m-0">
           <img

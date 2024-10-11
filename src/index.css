@@ -212,3 +212,19 @@ nav a:hover::after {
   background-size: cover;
   z-index: -1;
 }
+
+/* Add this in your CSS file */
+.product-slider {
+  width: 100%;
+  margin: auto;
+}
+
+.slider-image {
+  text-align: center;
+}
+
+.slider-image img {
+  width: 100%; /* Make the image responsive */
+  height: auto;
+  max-height: 400px; /* Set a max height as needed */
+}

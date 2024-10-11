@@ -18,7 +18,7 @@ export const CartProductCard = () => {
             <div className="qty">
               <div className="buttons flex">
                 <button className="px-3 py-1 bg-black text-white text-center text-[1.2rem]">
-                  <PlusSignIcon color="#fff" size={18} />
+                  <Remove01Icon color="#fff" size={18} />
                 </button>
                 <input
                   type="text"
@@ -27,7 +27,7 @@ export const CartProductCard = () => {
                   value={1}
                 />
                 <button className="px-3 py-1 bg-black text-white text-center text-[1.2rem]">
-                  <Remove01Icon color="#fff" size={18} />
+                  <PlusSignIcon color="#fff" size={18} />
                 </button>
               </div>
             </div>
