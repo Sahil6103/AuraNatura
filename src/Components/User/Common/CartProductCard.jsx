@@ -1,14 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { MenPerfume } from "../../../assets/index";
 import { PlusSignIcon, Remove01Icon, Delete02Icon } from "hugeicons-react";
 
 export const CartProductCard = () => {
+  let [count, setCount] = useState(1);
   return (
     <>
       <div className="cart w-full lg:w-[85%]">
         <div className="product-card py-2 flex justify-evenly items-center shadow-[0px_1px_0px_rgba(17,17,26,0.05),_0px_0px_8px_rgba(17,17,26,0.1)] ">
           <div className="product-img">
-            <img src={MenPerfume} alt="" className="w-[150px]" />
+            <img src={MenPerfume} alt="" className="w-[150px] bg-[#e7e7e7]" />
           </div>
           <div className="prodcut-details md:w-[60%] flex flex-col gap-1.5 md:gap-3 px-2 md:px-4 py-2">
             <h1 className="text-[1.1rem] md:text-[1.3rem] leading-[25px] font-semibold">
@@ -17,16 +18,24 @@ export const CartProductCard = () => {
             <span className="text-[1.1rem] md:text-[1.2rem]">Size : 50ML</span>
             <div className="qty">
               <div className="buttons flex">
-                <button className="px-3 py-1 bg-black text-white text-center text-[1.2rem]">
+                <button
+                  className="px-3 py-1 bg-black text-white text-center text-[1.2rem]"
+                  onClick={() => {
+                    count > 1 ? setCount(count - 1) : count;
+                  }}
+                >
                   <Remove01Icon color="#fff" size={18} />
                 </button>
                 <input
                   type="text"
                   disabled
                   className="py-1 w-[50px] text-center border border-gray-400"
-                  value={1}
+                  value={count}
                 />
-                <button className="px-3 py-1 bg-black text-white text-center text-[1.2rem]">
+                <button
+                  className="px-3 py-1 bg-black text-white text-center text-[1.2rem]"
+                  onClick={() => setCount(count + 1)}
+                >
                   <PlusSignIcon color="#fff" size={18} />
                 </button>
               </div>

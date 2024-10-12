@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import { MenPerfume } from "../../../assets/index";
 import { PlusSignIcon, Remove01Icon } from "hugeicons-react";
 import { Link } from "react-router-dom";
 
 export const ProductDetails = () => {
+  let [count, setCount] = useState(1);
+
   return (
     <>
       <div className="productdetails px-4 md:px-16 py-8 lg:py-16 flex flex-col lg:flex-row justify-between items-center gap-5">
         <div className="product-img flex justify-center items-center w-full lg:w-[40%]">
-          <img src={MenPerfume} alt="" className="w-[70%]" />
+          <img src={MenPerfume} alt="" className="w-[70%] bg-[#e7e7e7]" />
         </div>
         <div className="product-detail flex flex-col gap-2 w-full lg:w-[60%]">
           <div className="detail flex flex-col">
@@ -45,16 +47,22 @@ export const ProductDetails = () => {
           </div>
           <div className="qty mt-5">
             <div className="buttons flex">
-              <button className="px-3 lg:px-4 py-1 lg:py-2 bg-black text-white text-center text-[1.2rem]">
+              <button
+                className="px-3 lg:px-4 py-1 lg:py-2 bg-black text-white text-center text-[1.2rem]"
+                onClick={() => (count > 1 ? setCount(count - 1) : count)}
+              >
                 <Remove01Icon color="#fff" size={18} />
               </button>
               <input
                 type="text"
                 disabled
                 className="py-1 lg:py-2 w-[50px] lg:w-[60px] text-center border border-gray-400"
-                value={1}
+                value={count}
               />
-              <button className="px-3 lg:px-4 py-1 lg:py-2 bg-black text-white text-center text-[1.2rem]">
+              <button
+                className="px-3 lg:px-4 py-1 lg:py-2 bg-black text-white text-center text-[1.2rem]"
+                onClick={() => setCount(count + 1)}
+              >
                 <PlusSignIcon color="#fff" size={18} />
               </button>
             </div>
