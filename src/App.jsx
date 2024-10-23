@@ -14,6 +14,7 @@ import { Exclusive } from "./Components/User/Pages/Exclusive";
 import { Cart } from "./Components/User/Pages/Cart";
 import { CheckOut } from "./Components/User/Pages/CheckOut";
 import { ProductDetails } from "./Components/User/Pages/ProductDetails";
+import { PageNotFound } from "./Components/User/Pages/PageNotFound";
 
 /* ---------------------------- Admin Components ---------------------------- */
 import { AdminLayout } from "./Layout/AdminLayout";
@@ -46,6 +47,7 @@ export const App = () => {
             <Route path="/cart" element={<Cart />} />
             <Route path="/checkout" element={<CheckOut />} />
             <Route path="/product-details" element={<ProductDetails />} />
+            <Route path="*" element={<PageNotFound />} />
           </Route>
 
           {/* Admin panel routes */}

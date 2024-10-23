@@ -59,8 +59,10 @@
 .form-card .card h1,
 .aboutus .context h1,
 .contactus .context h1,
-.men .context h1 {
-  font-family: oleana;
+.men .context h1,
+.pagenotfound .heading .heading2 {
+  /* font-family: oleana; */
+  @apply font-[oleana];
 }
 
 .aboutus {

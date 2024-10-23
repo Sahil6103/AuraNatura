@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { HeadingBanner } from "../Common/HeadingBanner";
 import { CartProductCard } from "../Common/CartProductCard";
 import { Link } from "react-router-dom";
