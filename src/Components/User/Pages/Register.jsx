@@ -2,8 +2,11 @@ import React, { useState } from "react";
 import { HeadingBanner } from "../Common/HeadingBanner";
 import { Link } from "react-router-dom";
 import { ViewOffIcon, ViewIcon } from "hugeicons-react";
+import { UseScrollTop } from "../Common/UseScrollTop";
 
 export const Register = () => {
+  UseScrollTop();
+
   const [Hide, setHide] = useState(true);
 
   const toggleHide = () => {

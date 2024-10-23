@@ -28,7 +28,7 @@ export function AddProducts() {
             <Input
               size="lg"
               placeholder="Enter Product Title"
-              className="bg-[#efefef] rounded-[8px]"
+              className="!bg-[#efefef] rounded-[8px]"
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
@@ -44,7 +44,7 @@ export function AddProducts() {
               rows={5}
               size="lg"
               placeholder="Enter Product Description"
-              className="bg-[#efefef] rounded-[8px]"
+              className="!bg-[#efefef] rounded-[8px]"
             />
             <Typography
               variant="h6"
@@ -57,7 +57,7 @@ export function AddProducts() {
               type="text"
               size="lg"
               placeholder="Enter Product Stock"
-              className="bg-[#efefef] rounded-[8px]"
+              className="!bg-[#efefef] rounded-[8px]"
               labelProps={{
                 className: "before:content-none after:content-none",
               }}
@@ -73,7 +73,7 @@ export function AddProducts() {
               type="text"
               size="lg"
               placeholder="Enter Product Price"
-              className=" bg-[#efefef] rounded-[8px]"
+              className=" !bg-[#efefef] rounded-[8px]"
               labelProps={{
                 className: "before:content-none after:content-none",
               }}

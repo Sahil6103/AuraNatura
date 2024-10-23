@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Filter } from "../Common/Filter";
 import { FilterHorizontalIcon } from "hugeicons-react";
 import { ProductCard } from "../Common/ProductCard";
 import { MenPerfume } from "../../../assets/index";
 import { WomenPerfume } from "../../../assets/index";
 import { HeadingBanner } from "../Common/HeadingBanner";
+import { UseScrollTop } from "../Common/UseScrollTop";
 
 export const Men = () => {
+  UseScrollTop();
+
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -18,6 +21,11 @@ export const Men = () => {
       setSidebarOpen(false);
     }
   };
+
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

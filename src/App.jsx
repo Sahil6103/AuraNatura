@@ -69,7 +69,7 @@ export const App = () => {
           </Route>
 
           {/* Admin login page */}
-          <Route path="/admin-login" element={<AdminLogin />} />
+          <Route path="/admin" element={<AdminLogin />} />
         </Routes>
       </Router>
     </>

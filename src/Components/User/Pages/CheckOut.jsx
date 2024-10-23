@@ -1,7 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { HeadingBanner } from "../Common/HeadingBanner";
+import { UseScrollTop } from "../Common/UseScrollTop";
 
 export const CheckOut = () => {
+  UseScrollTop();
+
   return (
     <>
       <HeadingBanner heading="Checkout" page="Checkout" />

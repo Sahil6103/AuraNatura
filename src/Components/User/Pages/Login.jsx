@@ -1,9 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { HeadingBanner } from "../Common/HeadingBanner";
 import { Link } from "react-router-dom";
 import { ViewOffIcon, ViewIcon } from "hugeicons-react";
+import { UseScrollTop } from "../Common/UseScrollTop";
 
 export const Login = () => {
+  UseScrollTop();
+
   const [Hide, setHide] = useState(true);
 
   const toggleHide = () => {
@@ -15,6 +18,11 @@ export const Login = () => {
   ) : (
     <ViewIcon color="#9ca3af" className="absolute bottom-2 right-3" />
   );
+
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

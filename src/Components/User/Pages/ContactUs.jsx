@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { HeadingBanner } from "../Common/HeadingBanner";
 import {
   Location04Icon,
@@ -6,8 +6,11 @@ import {
   Mail01Icon,
   Clock01Icon,
 } from "hugeicons-react";
+import { UseScrollTop } from "../Common/UseScrollTop";
 
 export const ContactUs = () => {
+  UseScrollTop();
+
   return (
     <>
       <HeadingBanner heading="Contact Us" page="Contact Us" />

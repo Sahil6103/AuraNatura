@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { HeadingBanner } from "../Common/HeadingBanner";
 import { CartProductCard } from "../Common/CartProductCard";
 import { Link } from "react-router-dom";
+import { UseScrollTop } from "../Common/UseScrollTop";
 
 export const Cart = () => {
+  UseScrollTop();
+
   return (
     <>
       <HeadingBanner heading="Shopping Cart" page="Shopping Cart" />

@@ -1,8 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { HeadingBanner } from "../Common/HeadingBanner";
 import { About1Img, About2Img } from "../../../assets/index";
+import { UseScrollTop } from "../Common/UseScrollTop";
 
 export const AboutUs = () => {
+  UseScrollTop();
+
   return (
     <>
       <HeadingBanner heading="About Us" page="About Us" />

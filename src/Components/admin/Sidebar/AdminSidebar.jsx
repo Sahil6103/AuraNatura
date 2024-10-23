@@ -49,7 +49,7 @@ export function AdminSidebar({ closeSidebar }) {
           <ListItemPrefix>
             <UserGroupIcon color="#fff" size={20} className="m-0" />
           </ListItemPrefix>
-          <Typography color="blue-white" className="font-normal">
+          <Typography color="white" className="font-normal">
             Manage Customers
           </Typography>
         </Link>
@@ -82,7 +82,7 @@ export function AdminSidebar({ closeSidebar }) {
             <List className="p-0">
               <Link
                 to="admin-addproducts"
-                className="ps-10 py-3 rounded-lg hover:bg-[#ffffff2f]"
+                className="ps-10 py-3 rounded-lg text-white hover:bg-[#ffffff2f]"
                 onClick={closeSidebar}
               >
                 Add Products
@@ -90,7 +90,7 @@ export function AdminSidebar({ closeSidebar }) {
               <Link
                 to="admin-manageproducts"
                 onClick={closeSidebar}
-                className="ps-10 py-3 rounded-lg hover:bg-[#ffffff2f]"
+                className="ps-10 py-3 rounded-lg text-white hover:bg-[#ffffff2f]"
               >
                 Manage Products
               </Link>
@@ -127,14 +127,14 @@ export function AdminSidebar({ closeSidebar }) {
               <Link
                 to="admin-addcategory"
                 onClick={closeSidebar}
-                className="ps-10 py-3 rounded-lg hover:bg-[#ffffff2f]"
+                className="ps-10 py-3 rounded-lg text-white hover:bg-[#ffffff2f]"
               >
                 Add Category
               </Link>
               <Link
                 to="admin-managecategory"
                 onClick={closeSidebar}
-                className="ps-10 py-3 rounded-lg hover:bg-[#ffffff2f]"
+                className="ps-10 py-3 rounded-lg text-white hover:bg-[#ffffff2f]"
               >
                 Manage Category
               </Link>
@@ -171,14 +171,14 @@ export function AdminSidebar({ closeSidebar }) {
               <Link
                 to="admin-addsubcategory"
                 onClick={closeSidebar}
-                className="ps-10 py-3 rounded-lg hover:bg-[#ffffff2f]"
+                className="ps-10 py-3 rounded-lg text-white hover:bg-[#ffffff2f]"
               >
                 Add Subcategory
               </Link>
               <Link
                 to="admin-managesubcategory"
                 onClick={closeSidebar}
-                className="ps-10 py-3 rounded-lg hover:bg-[#ffffff2f]"
+                className="ps-10 py-3 rounded-lg text-white hover:bg-[#ffffff2f]"
               >
                 Manage Subcategory
               </Link>

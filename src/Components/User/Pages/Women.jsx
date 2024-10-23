@@ -5,8 +5,11 @@ import { ProductCard } from "../Common/ProductCard";
 import { MenPerfume } from "../../../assets/index";
 import { WomenPerfume } from "../../../assets/index";
 import { HeadingBanner } from "../Common/HeadingBanner";
+import { UseScrollTop } from "../Common/UseScrollTop";
 
 export const Women = () => {
+  UseScrollTop();
+
   const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
