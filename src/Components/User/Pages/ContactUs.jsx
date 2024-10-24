@@ -11,7 +11,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { showToastAndFocus } from "../../../assets/index";
 
 export const ContactUs = () => {
-  // UseScrollTop();
+  UseScrollTop();
 
   const fullnameInp = useRef(null);
   const emailInp = useRef(null);
@@ -156,13 +156,13 @@ export const ContactUs = () => {
                   ref={fullnameInp}
                   type="text"
                   placeholder="Full Name"
-                  className="py-2 w-full border-b-2 border-gray-300 bg-transparent text-[#202020] text-[1.2rem] focus:outline-none placeholder:text-gray-400"
+                  className="py-2 w-full border-b-2 border-gray-300 bg-transparent text-[#202020] text-[1.2rem] focus:outline-none focus:border-black hover:border-black placeholder:text-gray-400"
                 />
                 <input
                   ref={emailInp}
                   type="text"
                   placeholder="Email"
-                  className="py-2 w-full border-b-2 border-gray-300 bg-transparent text-[#202020] text-[1.2rem] focus:outline-none placeholder:text-gray-400"
+                  className="py-2 w-full border-b-2 border-gray-300 bg-transparent text-[#202020] text-[1.2rem] focus:outline-none focus:border-black hover:border-black placeholder:text-gray-400"
                 />
               </div>
               <div className="input-control w-full">
@@ -170,7 +170,7 @@ export const ContactUs = () => {
                   ref={subjectInp}
                   type="text"
                   placeholder="Subject"
-                  className="py-2 w-full border-b-2 border-gray-300 bg-transparent text-[#202020] text-[1.2rem] focus:outline-none placeholder:text-gray-400"
+                  className="py-2 w-full border-b-2 border-gray-300 bg-transparent text-[#202020] text-[1.2rem] focus:outline-none focus:border-black hover:border-black placeholder:text-gray-400"
                 />
               </div>
               <div className="input-control w-full">
@@ -178,7 +178,7 @@ export const ContactUs = () => {
                   ref={messageBox}
                   rows={3}
                   placeholder="Message"
-                  className="py-2 w-full border-b-2 border-gray-300 bg-transparent text-[#202020] text-[1.2rem] focus:outline-none placeholder:text-gray-400"
+                  className="py-2 w-full border-b-2 border-gray-300 bg-transparent text-[#202020] text-[1.2rem] focus:outline-none focus:border-black hover:border-black placeholder:text-gray-400"
                 ></textarea>
               </div>
               <div className="input-control">

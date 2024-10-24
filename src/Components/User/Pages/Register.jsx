@@ -86,7 +86,7 @@ export const Register = () => {
                 ref={fullnameInp}
                 type="text"
                 placeholder="Full Name"
-                className="py-2 w-full border-b-2 border-gray-300 bg-transparent text-[#202020] text-[1.2rem] focus:outline-none"
+                className="py-2 w-full border-b-2 border-gray-300 bg-transparent text-[#202020] text-[1.2rem] focus:outline-none focus:border-black hover:border-black placeholder:text-gray-400"
               />
             </div>
             <div className="input-control w-full">
@@ -94,7 +94,7 @@ export const Register = () => {
                 ref={emailInp}
                 type="text"
                 placeholder="Email Address"
-                className="py-2 w-full border-b-2 border-gray-300 bg-transparent text-[#202020] text-[1.2rem] focus:outline-none"
+                className="py-2 w-full border-b-2 border-gray-300 bg-transparent text-[#202020] text-[1.2rem] focus:outline-none focus:border-black hover:border-black placeholder:text-gray-400"
               />
             </div>
             <div className="input-control relative w-full">
@@ -102,7 +102,7 @@ export const Register = () => {
                 ref={passInp}
                 type={Hide ? "password" : "text"}
                 placeholder="Password"
-                className="relative py-2 w-full border-b-2 border-gray-300 bg-transparent text-[#202020] text-[1.2rem] focus:outline-none placeholder:text-gray-400"
+                className="relative py-2 w-full border-b-2 border-gray-300 bg-transparent text-[#202020] text-[1.2rem] focus:outline-none focus:border-black hover:border-black placeholder:text-gray-400"
               />
               <span className="show-hide" onClick={toggleHide}>
                 {changeIcon}
