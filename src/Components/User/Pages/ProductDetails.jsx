@@ -11,7 +11,7 @@ export const ProductDetails = () => {
 
   return (
     <>
-      <div className="productdetails px-4 md:px-16 py-8 lg:py-16 flex flex-col lg:flex-row justify-between items-center gap-5">
+      <div className="productdetails px-4 md:px-16 py-8 lg:py-16 flex flex-col lg:flex-row justify-between items-start gap-5">
         <div className="product-img flex justify-center items-center w-full lg:w-[40%]">
           <img src={MenPerfume} alt="" className="w-[70%] bg-[#e7e7e7]" />
         </div>

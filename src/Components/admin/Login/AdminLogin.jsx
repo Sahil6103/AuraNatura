@@ -1,7 +1,33 @@
-import React from "react";
+import React, { useRef } from "react";
 import { FullLogo } from "../../../assets/index";
+import toast, { Toaster } from "react-hot-toast";
+import { showToastAndFocus } from "../../../assets/index";
 
 export const AdminLogin = () => {
+  const emailInp = useRef(null);
+  const passInp = useRef(null);
+
+  const emailRegex =
+    /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+  const passwordRegex = /^[a-z0-9]{8,}$/;
+
+  const notify = (e) => {
+    const email = emailInp.current.value;
+    const password = passInp.current.value;
+
+    !email
+      ? showToastAndFocus("Please enter email!", emailInp, e)
+      : !emailRegex.test(email)
+      ? showToastAndFocus("Please enter a valid email!", emailInp, e)
+      : !password
+      ? showToastAndFocus("Please enter password!", passInp, e)
+      : !passwordRegex.test(password)
+      ? showToastAndFocus("Please enter a valid password!", passInp, e)
+      : null;
+    // All validations passed, proceed with the form submission
+  };
+
   return (
     <div className="bg-[#f0efed]">
       <div className="admin-login  h-[100vh] flex flex-col justify-center items-center gap-8 px-6">
@@ -17,10 +43,10 @@ export const AdminLogin = () => {
                 Email
               </label>
               <input
-                type="email"
-                id="email"
+                ref={emailInp}
+                type="text"
                 placeholder="Enter Email Address"
-                className="bg-[#efefef] px-3 py-3 rounded-[8px]"
+                className="bg-[#efefef] px-3 py-3 rounded-[8px] focus:outline-gray-600"
               />
             </div>
             <div className="form-control flex flex-col justify-center gap-2">
@@ -28,16 +54,20 @@ export const AdminLogin = () => {
                 Password
               </label>
               <input
+                ref={passInp}
                 type="password"
-                id="password"
                 placeholder="Enter Password"
-                className="bg-[#efefef] px-3 py-3 rounded-[8px]"
+                className="bg-[#efefef] px-3 py-3 rounded-[8px] focus:outline-gray-600"
               />
             </div>
             <div className="form-control mt-4 flex justify-center">
-              <button className="px-12 bg-gray-900 text-white text-center py-2 rounded-[8px] text-[1.1rem] font-bold">
+              <button
+                onClick={notify}
+                className="px-12 bg-gray-900 text-white text-center py-2 rounded-[8px] text-[1.1rem] font-bold"
+              >
                 Sign In
               </button>
+              <Toaster position="top-right" reverseOrder={false} />
             </div>
           </form>
         </div>

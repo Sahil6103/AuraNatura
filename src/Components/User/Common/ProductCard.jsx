@@ -19,9 +19,12 @@ export function ProductCard({ src, productName, price }) {
             className="h-full w-full object-cover bg-[#e7e7e7]"
           />
           <div className="btn absolute hidden md:block -bottom-full right-0 z-40 p-3 transition-all duration-300">
-            <button className="bg-[#b28a79] text-[#f0efed] py-1.5 md:px-[66px]">
+            <Link
+              to="/cart"
+              className="bg-[#b28a79] text-[#f0efed] py-1.5 md:px-[66px]"
+            >
               Add to Cart
-            </button>
+            </Link>
           </div>
         </CardHeader>
         <CardBody className="bg-transparent px-3 py-2 flex flex-col gap-3">

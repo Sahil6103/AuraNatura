@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { HeadingBanner } from "../Common/HeadingBanner";
 import {
   Location04Icon,
@@ -7,9 +7,52 @@ import {
   Clock01Icon,
 } from "hugeicons-react";
 import { UseScrollTop } from "../Common/UseScrollTop";
+import toast, { Toaster } from "react-hot-toast";
+import { showToastAndFocus } from "../../../assets/index";
 
 export const ContactUs = () => {
-  UseScrollTop();
+  // UseScrollTop();
+
+  const fullnameInp = useRef(null);
+  const emailInp = useRef(null);
+  const subjectInp = useRef(null);
+  const messageBox = useRef(null);
+
+  const emailRegex =
+    /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+  const fullNameRegex = /^[a-zA-Z ]+$/;
+
+  const nameRegex = /^[A-Za-z][a-z]*$/;
+
+  const stateRegex =
+    /^(Andhra Pradesh|Arunachal Pradesh|Assam|Bihar|Chhattisgarh|Goa|Gujarat|Haryana|Himachal Pradesh|Jharkhand|Karnataka|Kerala|Madhya Pradesh|Maharashtra|Manipur|Meghalaya|Mizoram|Nagaland|Odisha|Punjab|Rajasthan|Sikkim|Tamil Nadu|Telangana|Tripura|Uttar Pradesh|Uttarakhand|West Bengal)$/i;
+
+  const notify = (e) => {
+    const fullname = fullnameInp.current.value;
+    const email = emailInp.current.value;
+    const subject = subjectInp.current.value;
+    const message = messageBox.current.value;
+
+    !fullname
+      ? showToastAndFocus("Please enter your name!", fullnameInp, e)
+      : !email
+      ? showToastAndFocus("Please enter your Email!", emailInp, e)
+      : !subject
+      ? showToastAndFocus(
+          "Please enter subject of your message!",
+          subjectInp,
+          e
+        )
+      : !message
+      ? showToastAndFocus("Please enter your message!", messageBox, e)
+      : !fullNameRegex.test(fullname)
+      ? showToastAndFocus("Please enter a valid name!", fullnameInp, e)
+      : !emailRegex.test(email)
+      ? showToastAndFocus("Please enter a valid Email!", emailInp, e)
+      : null;
+    // All validations passed, proceed with the form submission
+  };
 
   return (
     <>
@@ -110,18 +153,21 @@ export const ContactUs = () => {
             >
               <div className="input-group w-full flex flex-col md:flex-row justify-center items-center gap-8">
                 <input
+                  ref={fullnameInp}
                   type="text"
                   placeholder="Full Name"
                   className="py-2 w-full border-b-2 border-gray-300 bg-transparent text-[#202020] text-[1.2rem] focus:outline-none placeholder:text-gray-400"
                 />
                 <input
-                  type="email"
+                  ref={emailInp}
+                  type="text"
                   placeholder="Email"
                   className="py-2 w-full border-b-2 border-gray-300 bg-transparent text-[#202020] text-[1.2rem] focus:outline-none placeholder:text-gray-400"
                 />
               </div>
               <div className="input-control w-full">
                 <input
+                  ref={subjectInp}
                   type="text"
                   placeholder="Subject"
                   className="py-2 w-full border-b-2 border-gray-300 bg-transparent text-[#202020] text-[1.2rem] focus:outline-none placeholder:text-gray-400"
@@ -129,15 +175,20 @@ export const ContactUs = () => {
               </div>
               <div className="input-control w-full">
                 <textarea
+                  ref={messageBox}
                   rows={3}
                   placeholder="Message"
                   className="py-2 w-full border-b-2 border-gray-300 bg-transparent text-[#202020] text-[1.2rem] focus:outline-none placeholder:text-gray-400"
                 ></textarea>
               </div>
               <div className="input-control">
-                <button className="bg-[#b48b5e] text-[#f0efed] border-2 border-[#b48b5e] px-12 p-1.5 text-[1.3rem] hover:bg-transparent hover:border-2 hover:border-[#b48b5e] hover:text-[#b48b5e] transition-all duration-300">
+                <button
+                  onClick={notify}
+                  className="bg-[#b48b5e] text-[#f0efed] border-2 border-[#b48b5e] px-12 p-1.5 text-[1.3rem] hover:bg-transparent hover:border-2 hover:border-[#b48b5e] hover:text-[#b48b5e] transition-all duration-300"
+                >
                   Submit
                 </button>
+                <Toaster position="top-right" reverseOrder={false} />
               </div>
             </form>
           </div>
