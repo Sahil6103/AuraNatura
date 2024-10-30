@@ -1,5 +1,5 @@
 import React from "react";
-import { FullLogo } from "../../../assets/index";
+import { FullLogo } from "../../assets/index";
 
 export const Preloader = () => {
   return (

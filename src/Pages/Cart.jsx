@@ -1,8 +1,8 @@
 import React from "react";
-import { HeadingBanner } from "../Common/HeadingBanner";
-import { CartProductCard } from "../Common/CartProductCard";
+import { HeadingBanner } from "../Components/Common/HeadingBanner";
+import { CartProductCard } from "../Components/Common/CartProductCard";
 import { Link } from "react-router-dom";
-import { UseScrollTop } from "../Common/UseScrollTop";
+import { UseScrollTop } from "../Components/Common/UseScrollTop";
 
 export const Cart = () => {
   UseScrollTop();

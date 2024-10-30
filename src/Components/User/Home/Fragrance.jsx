@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FragranceImg } from "../../assets/index";
+import { FragranceImg } from "../../../assets/index";
 
 export const Fragrance = () => {
   return (

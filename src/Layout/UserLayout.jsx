@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Outlet } from "react-router-dom";
-import { Header } from "../Components/User/Header";
-import { Footer } from "../Components/User/Footer";
-import { Preloader } from "../Components/User/Common/Preloader";
+import { Header } from "../Components/User/Home/Header";
+import { Footer } from "../Components/User/Home/Footer";
+import { Preloader } from "../Components/Common/Preloader";
 
 export const UserLayout = () => {
   const [loading, setLoading] = useState(true);

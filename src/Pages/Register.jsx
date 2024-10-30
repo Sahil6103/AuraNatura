@@ -1,18 +1,12 @@
-import React, { useEffect, useRef, useState } from "react";
-import { HeadingBanner } from "../Common/HeadingBanner";
+import React, { useRef, useState } from "react";
+import { HeadingBanner } from "../Components/Common/HeadingBanner";
 import { Link } from "react-router-dom";
-import {
-  ViewOffIcon,
-  ViewIcon,
-  CursorEdit01Icon,
-  InformationSquareIcon,
-} from "hugeicons-react";
-import { UseScrollTop } from "../Common/UseScrollTop";
+import { ViewOffIcon, ViewIcon, InformationSquareIcon } from "hugeicons-react";
+import { UseScrollTop } from "../Components/Common/UseScrollTop";
 import toast, { Toaster } from "react-hot-toast";
-import { showToastAndFocus } from "../../../assets/index";
+import { showToastAndFocus } from "../assets/index";
 
-export const Login = () => {
-  // Render Component from the top
+export const Register = () => {
   UseScrollTop();
 
   const [Hide, setHide] = useState(true);
@@ -43,6 +37,7 @@ export const Login = () => {
     ));
   };
 
+  const fullnameInp = useRef(null);
   const emailInp = useRef(null);
   const passInp = useRef(null);
 
@@ -50,47 +45,50 @@ export const Login = () => {
     /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
   const passwordRegex = /^[a-z0-9]{8,}$/;
-
-  const showToastAndFocus = (message, ref, e) => {
-    e.preventDefault();
-    toast.error(message);
-    ref.current.focus();
-  };
+  const fullNameRegex = /^[a-zA-Z ]+$/;
 
   const notify = (e) => {
+    const fullname = fullnameInp.current.value;
     const email = emailInp.current.value;
     const password = passInp.current.value;
 
-    !email
-      ? showToastAndFocus("Please enter Email!", emailInp, e)
-      : !password
-      ? showToastAndFocus("Please enter password!", passInp, e)
+    !fullname || !email || !password
+      ? showToastAndFocus("Please fill all the fields!", fullnameInp, e)
+      : !fullNameRegex.test(fullname)
+      ? showToastAndFocus("Please enter a valid name!", fullnameInp, e)
       : !emailRegex.test(email)
       ? showToastAndFocus("Please enter a valid Email!", emailInp, e)
       : !passwordRegex.test(password)
       ? showToastAndFocus("Please enter a valid password!", passInp, e)
       : null;
-
-    // Proceed if all validations pass
+    // All validations passed, proceed with the form submission
   };
 
   return (
     <>
-      <HeadingBanner heading="Customer Login" page="Login" />
+      <HeadingBanner heading="Member Registration" page="Register" />
       <div className="form-card flex flex-col justify-center items-center px-4">
-        <div className="card bg-[#e9e9e9] bg-red flex flex-col justify-center items-center gap-12 w-full md:w-[50%] lg:w-[35%] my-16 px-5 md:px-8 lg:px-12 py-10">
+        <div className="card bg-[#e9e9e9] flex flex-col justify-center items-center gap-12 w-full md:w-[50%] lg:w-[35%] my-16 px-5 md:px-8 lg:px-12 py-10">
           <div className="context text-center flex flex-col justify-center items-center gap-2">
             <h1 className="text-[2.3rem] text-[#b48b5e] font-bold tracking-widest">
-              Login
+              Register
             </h1>
             <span className="text-[1.1rem] text-slate-500">
-              Great to have you back!
+              If you are not a member, register now!
             </span>
           </div>
           <form
             action=""
             className="flex flex-col justify-center items-center gap-10 w-full"
           >
+            <div className="input-control w-full">
+              <input
+                ref={fullnameInp}
+                type="text"
+                placeholder="Full Name"
+                className="py-2 w-full border-b-2 border-gray-300 bg-transparent text-[#202020] text-[1.2rem] focus:outline-none focus:border-black hover:border-black placeholder:text-gray-400"
+              />
+            </div>
             <div className="input-control w-full">
               <input
                 ref={emailInp}
@@ -122,19 +120,19 @@ export const Login = () => {
                 onClick={notify}
                 className="bg-[#b48b5e] text-[#f0efed] border-2 border-[#b48b5e] px-12 p-1.5 text-[1.3rem] hover:bg-transparent hover:border-2 hover:border-[#b48b5e] hover:text-[#b48b5e] transition-all duration-300"
               >
-                Log In
+                Register
               </button>
-              <Toaster position="top-right" reverseOrder={false} />
+              {/* <Toaster position="top-right" reverseOrder={false} /> */}
             </div>
             <div className="register-link flex flex-col justify-center items-center">
               <span className="text-[1.1rem] text-slate-500">
-                Become a Member?
+                Already Member?
               </span>
               <Link
-                to="/register"
+                to="/login"
                 className="text-[1.3rem] text-slate-500 hover:text-[#b48b5e] transition-all duration-300"
               >
-                Register
+                Log In
               </Link>
             </div>
           </form>

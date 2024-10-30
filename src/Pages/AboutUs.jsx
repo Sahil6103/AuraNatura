@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
-import { HeadingBanner } from "../Common/HeadingBanner";
-import { About1Img, About2Img } from "../../../assets/index";
-import { UseScrollTop } from "../Common/UseScrollTop";
+import { HeadingBanner } from "../Components/Common/HeadingBanner";
+import { About1Img, About2Img } from "../assets/index";
+import { UseScrollTop } from "../Components/Common/UseScrollTop";
 
 export const AboutUs = () => {
   UseScrollTop();

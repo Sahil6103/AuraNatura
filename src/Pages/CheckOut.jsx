@@ -1,8 +1,8 @@
 import React, { useEffect, useRef } from "react";
-import { HeadingBanner } from "../Common/HeadingBanner";
-import { UseScrollTop } from "../Common/UseScrollTop";
+import { HeadingBanner } from "../Components/Common/HeadingBanner";
+import { UseScrollTop } from "../Components/Common/UseScrollTop";
 import toast, { Toaster } from "react-hot-toast";
-import { showToastAndFocus } from "../../../assets/index";
+import { showToastAndFocus } from "../assets/index";
 
 export const CheckOut = () => {
   // UseScrollTop();
@@ -196,7 +196,7 @@ export const CheckOut = () => {
               Place Order
             </button>
           </form>
-          <Toaster position="top-right" reverseOrder={false} />
+          {/* <Toaster position="top-right" reverseOrder={false} /> */}
         </div>
       </div>
     </>

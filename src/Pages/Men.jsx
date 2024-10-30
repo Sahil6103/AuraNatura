@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Filter } from "../Common/Filter";
+import { Filter } from "../Components/Common/Filter";
 import { FilterHorizontalIcon } from "hugeicons-react";
-import { ProductCard } from "../Common/ProductCard";
-import { MenPerfume } from "../../../assets/index";
-import { WomenPerfume } from "../../../assets/index";
-import { HeadingBanner } from "../Common/HeadingBanner";
-import { UseScrollTop } from "../Common/UseScrollTop";
+import { ProductCard } from "../Components/Common/ProductCard";
+import { MenPerfume } from "../assets/index";
+import { WomenPerfume } from "../assets/index";
+import { HeadingBanner } from "../Components/Common/HeadingBanner";
+import { UseScrollTop } from "../Components/Common/UseScrollTop";
 
-export const Exclusive = () => {
+export const Men = () => {
   UseScrollTop();
 
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -29,10 +29,7 @@ export const Exclusive = () => {
 
   return (
     <>
-      <HeadingBanner
-        heading="Exclusive Collection"
-        page="Exclusive Collection"
-      />
+      <HeadingBanner heading="Men's Collection" page="Men's Collection" />
       <div className="men flex flex-col gap-8 px-4 md:px-10 py-10">
         <div className="main-content md:relative flex flex-col md:flex-row justify-center items-start gap-8 md:gap-10 xl:gap-16 ">
           <button

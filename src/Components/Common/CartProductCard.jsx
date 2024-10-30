@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { MenPerfume } from "../../../assets/index";
+import { MenPerfume } from "../../assets/index";
 import { PlusSignIcon, Remove01Icon, Delete02Icon } from "hugeicons-react";
 
 export const CartProductCard = () => {

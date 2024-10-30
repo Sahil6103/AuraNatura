@@ -1,14 +1,14 @@
 import React, { useEffect, useRef } from "react";
-import { HeadingBanner } from "../Common/HeadingBanner";
+import { HeadingBanner } from "../Components/Common/HeadingBanner";
 import {
   Location04Icon,
   CallIcon,
   Mail01Icon,
   Clock01Icon,
 } from "hugeicons-react";
-import { UseScrollTop } from "../Common/UseScrollTop";
+import { UseScrollTop } from "../Components/Common/UseScrollTop";
 import toast, { Toaster } from "react-hot-toast";
-import { showToastAndFocus } from "../../../assets/index";
+import { showToastAndFocus } from "../assets/index";
 
 export const ContactUs = () => {
   UseScrollTop();
@@ -24,9 +24,6 @@ export const ContactUs = () => {
   const fullNameRegex = /^[a-zA-Z ]+$/;
 
   const nameRegex = /^[A-Za-z][a-z]*$/;
-
-  const stateRegex =
-    /^(Andhra Pradesh|Arunachal Pradesh|Assam|Bihar|Chhattisgarh|Goa|Gujarat|Haryana|Himachal Pradesh|Jharkhand|Karnataka|Kerala|Madhya Pradesh|Maharashtra|Manipur|Meghalaya|Mizoram|Nagaland|Odisha|Punjab|Rajasthan|Sikkim|Tamil Nadu|Telangana|Tripura|Uttar Pradesh|Uttarakhand|West Bengal)$/i;
 
   const notify = (e) => {
     const fullname = fullnameInp.current.value;
@@ -188,7 +185,7 @@ export const ContactUs = () => {
                 >
                   Submit
                 </button>
-                <Toaster position="top-right" reverseOrder={false} />
+                {/* <Toaster position="top-right" reverseOrder={false} /> */}
               </div>
             </form>
           </div>

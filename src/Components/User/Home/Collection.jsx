@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { MenCollectionImg, WomenCollectionImg } from "../../assets/index";
+import { MenCollectionImg, WomenCollectionImg } from "../../../assets/index";
 
 export const Collection = () => {
   return (

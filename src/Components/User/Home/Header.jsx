@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { LogoIcon } from "../../assets/index";
+import { LogoIcon } from "../../../assets/index";
 import { Link } from "react-router-dom";
 import {
   ShoppingBasket01Icon,

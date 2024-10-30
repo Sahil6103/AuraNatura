@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { MenPerfume } from "../../../assets/index";
+import { MenPerfume } from "../assets/index";
 import { PlusSignIcon, Remove01Icon } from "hugeicons-react";
 import { Link } from "react-router-dom";
-import { UseScrollTop } from "../Common/UseScrollTop";
+import { UseScrollTop } from "../Components/Common/UseScrollTop";
 
 export const ProductDetails = () => {
   UseScrollTop();

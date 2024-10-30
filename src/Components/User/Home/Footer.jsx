@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FullLogo } from "../../assets/index";
+import { FullLogo } from "../../../assets/index";
 import { Facebook02Icon, InstagramIcon, NewTwitterIcon } from "hugeicons-react";
 
 export const Footer = () => {

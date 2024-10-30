@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import { Filter } from "../Common/Filter";
+import React, { useEffect, useState } from "react";
+import { Filter } from "../Components/Common/Filter";
 import { FilterHorizontalIcon } from "hugeicons-react";
-import { ProductCard } from "../Common/ProductCard";
-import { MenPerfume } from "../../../assets/index";
-import { WomenPerfume } from "../../../assets/index";
-import { HeadingBanner } from "../Common/HeadingBanner";
-import { UseScrollTop } from "../Common/UseScrollTop";
+import { ProductCard } from "../Components/Common/ProductCard";
+import { MenPerfume } from "../assets/index";
+import { WomenPerfume } from "../assets/index";
+import { HeadingBanner } from "../Components/Common/HeadingBanner";
+import { UseScrollTop } from "../Components/Common/UseScrollTop";
 
-export const Women = () => {
+export const Exclusive = () => {
   UseScrollTop();
 
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -22,10 +22,18 @@ export const Women = () => {
     }
   };
 
+  useEffect(() => {
+    // Scroll to the top when the component mounts
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <>
-      <HeadingBanner heading="Women's Collection" page="Women's Collection" />
-      <div className="women flex flex-col gap-8 px-4 md:px-10 py-10">
+      <HeadingBanner
+        heading="Exclusive Collection"
+        page="Exclusive Collection"
+      />
+      <div className="men flex flex-col gap-8 px-4 md:px-10 py-10">
         <div className="main-content md:relative flex flex-col md:flex-row justify-center items-start gap-8 md:gap-10 xl:gap-16 ">
           <button
             className="flex md:hidden justify-center items-center gap-2 self-start px-8 py-1.5 bg-[#b48b5e] text-[#e9e9e9]"

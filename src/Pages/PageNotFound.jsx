@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { HeadingBanner } from "../Common/HeadingBanner";
+import { HeadingBanner } from "../Components/Common/HeadingBanner";
 
 export const PageNotFound = () => {
   return (

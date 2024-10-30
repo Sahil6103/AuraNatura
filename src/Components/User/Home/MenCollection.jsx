@@ -1,8 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { ProductCard } from "./Common/ProductCard";
-import { MenPerfume } from "../../assets/index";
-import { WomenPerfume } from "../../assets/index";
+import { ProductCard } from "../../Common/ProductCard";
+import { MenPerfume } from "../../../assets/index";
+import { WomenPerfume } from "../../../assets/index";
 
 export const MenCollection = () => {
   return (
