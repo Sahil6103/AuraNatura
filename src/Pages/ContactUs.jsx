@@ -7,8 +7,12 @@ import {
   Clock01Icon,
 } from "hugeicons-react";
 import { UseScrollTop } from "../Components/Common/UseScrollTop";
-import toast, { Toaster } from "react-hot-toast";
+// import toast, { Toaster } from "react-hot-toast";
 import { showToastAndFocus } from "../assets/index";
+import toast from "react-hot-toast";
+import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
+import { send } from "@emailjs/browser";
 
 export const ContactUs = () => {
   UseScrollTop();
@@ -16,20 +20,18 @@ export const ContactUs = () => {
   const fullnameInp = useRef(null);
   const emailInp = useRef(null);
   const subjectInp = useRef(null);
-  const messageBox = useRef(null);
+  const messageInp = useRef(null);
 
   const emailRegex =
     /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
   const fullNameRegex = /^[a-zA-Z ]+$/;
 
-  const nameRegex = /^[A-Za-z][a-z]*$/;
-
   const notify = (e) => {
     const fullname = fullnameInp.current.value;
     const email = emailInp.current.value;
     const subject = subjectInp.current.value;
-    const message = messageBox.current.value;
+    const message = messageInp.current.value;
 
     !fullname
       ? showToastAndFocus("Please enter your name!", fullnameInp, e)
@@ -42,13 +44,80 @@ export const ContactUs = () => {
           e
         )
       : !message
-      ? showToastAndFocus("Please enter your message!", messageBox, e)
+      ? showToastAndFocus("Please enter your message!", messageInp, e)
       : !fullNameRegex.test(fullname)
       ? showToastAndFocus("Please enter a valid name!", fullnameInp, e)
       : !emailRegex.test(email)
       ? showToastAndFocus("Please enter a valid Email!", emailInp, e)
-      : null;
+      : saveFeedback(e);
     // All validations passed, proceed with the form submission
+  };
+
+  const saveFeedback = async (e) => {
+    e.preventDefault();
+
+    // getting data into object
+    const feedbackObj = {
+      id: uuidv4(),
+      fullname: fullnameInp.current.value,
+      email: emailInp.current.value,
+      subject: subjectInp.current.value,
+      message: messageInp.current.value,
+    };
+
+    // using axios to save the data into json file
+    try {
+      const response = await axios.post(
+        `http://localhost:5000/feedback`,
+        feedbackObj
+      );
+      toast.success("Feedback Sent!");
+      console.log("response", response);
+
+      const serviceId = "service_ukxbz2f";
+      const cutomerTemplateId = "template_c8tk685";
+      const publicId = "fzoFsq5CVEHLPydhq";
+
+      send(
+        serviceId,
+        cutomerTemplateId,
+        {
+          from_name: feedbackObj.fullname,
+          from_email: feedbackObj.email, // User's email
+          subject: feedbackObj.subject,
+          message: feedbackObj.message,
+          to_email: "spider61003@gmail.com",
+        },
+        publicId
+      );
+      console.log("email send to the customer");
+    } catch (err) {
+      console.log(err);
+      toast.error("Something went wrong!");
+    }
+
+    const serviceId = "service_ukxbz2f";
+    const AdminTemplateId = "template_vv2r0l7";
+    const publicId = "fzoFsq5CVEHLPydhq";
+    // send the feedback via email using Email.js
+    send(
+      serviceId, // Correct Service ID
+      AdminTemplateId, // Correct Template ID
+      {
+        from_name: feedbackObj.fullname,
+        from_email: feedbackObj.email,
+        subject: feedbackObj.subject,
+        message: feedbackObj.message,
+      },
+      publicId // Correct Public Key
+    );
+
+    // reset all the fields
+    fullnameInp.current.value = "";
+    emailInp.current.value = "";
+    subjectInp.current.value = "";
+    messageInp.current.value = "";
+    console.log("email sent to the admin");
   };
 
   return (
@@ -151,12 +220,14 @@ export const ContactUs = () => {
               <div className="input-group w-full flex flex-col md:flex-row justify-center items-center gap-8">
                 <input
                   ref={fullnameInp}
+                  name="full name"
                   type="text"
                   placeholder="Full Name"
                   className="py-2 w-full border-b-2 border-gray-300 bg-transparent text-[#202020] text-[1.2rem] focus:outline-none focus:border-black hover:border-black placeholder:text-gray-400"
                 />
                 <input
                   ref={emailInp}
+                  name="email"
                   type="text"
                   placeholder="Email"
                   className="py-2 w-full border-b-2 border-gray-300 bg-transparent text-[#202020] text-[1.2rem] focus:outline-none focus:border-black hover:border-black placeholder:text-gray-400"
@@ -165,6 +236,7 @@ export const ContactUs = () => {
               <div className="input-control w-full">
                 <input
                   ref={subjectInp}
+                  name="subject"
                   type="text"
                   placeholder="Subject"
                   className="py-2 w-full border-b-2 border-gray-300 bg-transparent text-[#202020] text-[1.2rem] focus:outline-none focus:border-black hover:border-black placeholder:text-gray-400"
@@ -172,7 +244,8 @@ export const ContactUs = () => {
               </div>
               <div className="input-control w-full">
                 <textarea
-                  ref={messageBox}
+                  ref={messageInp}
+                  name="message"
                   rows={3}
                   placeholder="Message"
                   className="py-2 w-full border-b-2 border-gray-300 bg-transparent text-[#202020] text-[1.2rem] focus:outline-none focus:border-black hover:border-black placeholder:text-gray-400"

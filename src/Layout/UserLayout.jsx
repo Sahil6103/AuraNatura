@@ -10,7 +10,7 @@ export const UserLayout = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setLoading(false);
-    }, 3000); // Preloader duration
+    }, 1); // Preloader duration
 
     return () => clearTimeout(timer); // Cleanup timer on unmount
   }, []);
