@@ -68,7 +68,7 @@ export const ContactUs = () => {
     // using axios to save the data into json file
     try {
       const response = await axios.post(
-        `http://localhost:5000/feedback`,
+        `https://673ebc2fa9bc276ec4b57911.mockapi.io/feedback`,
         feedbackObj
       );
       toast.success("Feedback Sent!");

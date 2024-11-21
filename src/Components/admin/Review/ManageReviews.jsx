@@ -10,7 +10,9 @@ export const ManageReviews = () => {
 
   const fetchFeedback = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/feedback");
+      const response = await axios.get(
+        "https://673ebc2fa9bc276ec4b57911.mockapi.io/feedback"
+      );
       setFeedback(response.data);
     } catch (error) {
       console.error("Error fetching feedback:", error);
@@ -24,7 +26,9 @@ export const ManageReviews = () => {
 
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:5000/feedback/${id}`);
+      await axios.delete(
+        `https://673ebc2fa9bc276ec4b57911.mockapi.io/feedback/${id}`
+      );
       setFeedback(feedback.filter((item) => item.id !== id));
       toast.success("Feedback deleted successfully!");
     } catch (err) {
@@ -35,12 +39,16 @@ export const ManageReviews = () => {
 
   const handleDeleteAll = async () => {
     try {
-      const response = await axios.get("http://localhost:5000/feedback");
+      const response = await axios.get(
+        "https://673ebc2fa9bc276ec4b57911.mockapi.io/feedback"
+      );
       const feedbackData = response.data;
 
       await Promise.all(
         feedbackData.map((item) => {
-          axios.delete(`http://localhost:5000/feedback/${item.id}`);
+          axios.delete(
+            `https://673ebc2fa9bc276ec4b57911.mockapi.io/feedback/${item.id}`
+          );
         })
       );
       setFeedback([]);
