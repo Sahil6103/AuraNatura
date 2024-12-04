@@ -6,7 +6,11 @@ export const Collection = () => {
   return (
     <>
       <div className="cards flex flex-col sm:flex-col md:flex-row justify-center items-center gap-5 md:gap-8 px-5 md:px-10 py-8 md:py-10">
-        <Link to="/men-collection" className="w-full lg:w-[45%] relative">
+        <Link
+          data-aos="fade-right"
+          to="/men-collection"
+          className="w-full lg:w-[45%] relative"
+        >
           <div className="men-card">
             <img src={MenCollectionImg} alt="" />
             <div className="context absolute top-1 md:top-[20px] left-0 px-3 md:px-5 flex flex-col gap-1">
@@ -17,7 +21,11 @@ export const Collection = () => {
             </div>
           </div>
         </Link>
-        <Link to="/women-collection" className="relative w-full lg:w-[45%]">
+        <Link
+          data-aos="fade-left"
+          to="/women-collection"
+          className="relative w-full lg:w-[45%]"
+        >
           <div className="woman-card ">
             <img src={WomenCollectionImg} alt="" />
             <div className="context absolute top-1 md:top-[20px] left-0 px-3 md:px-5 flex flex-col gap-1">

@@ -3,7 +3,10 @@ import React from "react";
 export const Features = () => {
   return (
     <>
-      <div className="features flex flex-col md:flex-row justify-center items-center gap-8 px-5 md:px-20 py-8 md:py-10">
+      <div
+        data-aos="fade-up"
+        className="features flex flex-col md:flex-row justify-center items-center gap-8 px-5 md:px-20 py-8 md:py-10"
+      >
         <div className="card1 w-full md:w-[50%]">
           <div className="context p-14 flex flex-col justify-center items-center text-center">
             <h1 className="text-[2.8rem] leading-10">Free Shipping</h1>

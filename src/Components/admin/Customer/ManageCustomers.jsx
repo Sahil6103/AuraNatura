@@ -1,42 +1,28 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Card, Typography } from "@material-tailwind/react";
-
-const TABLE_HEAD = ["Name", "Email", "Mobile No.", ""];
-
-const TABLE_ROWS = [
-  {
-    name: "John Michael",
-    job: "john@john.com",
-    date: "0123456789",
-  },
-  {
-    name: "John Michael",
-    job: "john@john.com",
-    date: "0123456789",
-  },
-  {
-    name: "John Michael",
-    job: "john@john.com",
-    date: "0123456789",
-  },
-  {
-    name: "John Michael",
-    job: "john@john.com",
-    date: "0123456789",
-  },
-  {
-    name: "John Michael",
-    job: "john@john.com",
-    date: "0123456789",
-  },
-  {
-    name: "John Michael",
-    job: "john@john.com",
-    date: "0123456789",
-  },
-];
+import axios from "axios";
+import toast from "react-hot-toast";
 
 export const ManageCustomers = () => {
+  const [user, setUser] = useState([]); // State for feedback
+  const TABLE_HEAD = ["Full Name", "Email", "Password"];
+
+  const fetchUsers = async () => {
+    try {
+      const response = await axios.get(
+        "https://673ebc2fa9bc276ec4b57911.mockapi.io/users"
+      );
+      setUser(response.data);
+    } catch (error) {
+      console.error("Error fetching feedback:", error);
+      toast.error("Failed to fetch users!");
+    }
+  };
+
+  useEffect(() => {
+    fetchUsers();
+  }, []);
+
   return (
     <>
       <div className="list flex flex-col">
@@ -64,19 +50,19 @@ export const ManageCustomers = () => {
               </tr>
             </thead>
             <tbody>
-              {TABLE_ROWS.map(({ name, job, date }, index) => {
-                const isLast = index === TABLE_ROWS.length - 1;
+              {user.map(({ id, fullname, email, password }, index) => {
+                const isLast = index === user.length - 1;
                 const classes = isLast ? "p-4" : "p-4 border-b border-gray-300";
 
                 return (
-                  <tr key={name}>
+                  <tr key={id}>
                     <td className={classes}>
                       <Typography
                         variant="small"
                         color="blue-gray"
                         className="font-normal"
                       >
-                        {name}
+                        {fullname}
                       </Typography>
                     </td>
                     <td className={classes}>
@@ -85,7 +71,7 @@ export const ManageCustomers = () => {
                         color="blue-gray"
                         className="font-normal"
                       >
-                        {job}
+                        {email}
                       </Typography>
                     </td>
                     <td className={classes}>
@@ -94,18 +80,7 @@ export const ManageCustomers = () => {
                         color="blue-gray"
                         className="font-normal"
                       >
-                        {date}
-                      </Typography>
-                    </td>
-                    <td className={classes}>
-                      <Typography
-                        as="a"
-                        href="#"
-                        variant="small"
-                        color="blue-gray"
-                        className="font-medium"
-                      >
-                        Delete
+                        {password}
                       </Typography>
                     </td>
                   </tr>

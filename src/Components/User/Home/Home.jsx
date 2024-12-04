@@ -7,8 +7,10 @@ import { MenCollection } from "./MenCollection";
 import { WomenCollection } from "./WomenCollection";
 import { Features } from "./Features";
 import { History } from "./History";
+import { UseScrollTop } from "../../Common/UseScrollTop";
 
 export const Home = () => {
+  UseScrollTop();
   return (
     <>
       <Hero />

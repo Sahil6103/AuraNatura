@@ -5,7 +5,10 @@ import { FragranceImg } from "../../../assets/index";
 export const Fragrance = () => {
   return (
     <>
-      <div className="fragrance flex flex-col md:flex-row justify-center items-center gap-6 px-5 md:px-10 py-8 md:pt-20 md:pb-8">
+      <div
+        data-aos="fade-up"
+        className="fragrance flex flex-col md:flex-row justify-center items-center gap-6 px-5 md:px-10 py-8 md:pt-20 md:pb-8"
+      >
         <div className="left w-full md:w-3/12">
           <img src={FragranceImg} alt="" className="w-full" />
         </div>

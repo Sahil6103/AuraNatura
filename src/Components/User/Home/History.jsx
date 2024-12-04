@@ -4,7 +4,10 @@ import { Link } from "react-router-dom";
 export const History = () => {
   return (
     <>
-      <div className="history h-auto flex flex-col justify-center items-center gap-8 my-8 py-20 px-10">
+      <div
+        data-aos="fade-up"
+        className="history h-auto flex flex-col justify-center items-center gap-8 my-8 py-20 px-10"
+      >
         <div className="context text-[#f0efed] text-center text-[1.1rem] w-full md:w-[70%]">
           <span>
             Our story is deeply rooted in a love for nature and the art of

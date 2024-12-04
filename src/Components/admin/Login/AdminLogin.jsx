@@ -2,30 +2,52 @@ import React, { useRef } from "react";
 import { FullLogo } from "../../../assets/index";
 import toast, { Toaster } from "react-hot-toast";
 import { showToastAndFocus } from "../../../assets/index";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export const AdminLogin = () => {
-  const emailInp = useRef(null);
-  const passInp = useRef(null);
+  const navigate = useNavigate();
 
-  const emailRegex =
-    /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
-
-  const passwordRegex = /^[a-z0-9]{8,}$/;
+  const adminnameInp = useRef(null);
+  const passwordInp = useRef(null);
 
   const notify = (e) => {
-    const email = emailInp.current.value;
-    const password = passInp.current.value;
+    const adminname = adminnameInp.current.value;
+    const password = passwordInp.current.value;
 
-    !email
-      ? showToastAndFocus("Please enter email!", emailInp, e)
-      : !emailRegex.test(email)
-      ? showToastAndFocus("Please enter a valid email!", emailInp, e)
+    !adminname
+      ? showToastAndFocus("Enter admin name", adminnameInp, e)
       : !password
-      ? showToastAndFocus("Please enter password!", passInp, e)
-      : !passwordRegex.test(password)
-      ? showToastAndFocus("Please enter a valid password!", passInp, e)
-      : null;
-    // All validations passed, proceed with the form submission
+      ? showToastAndFocus("Enter Password!", passwordInp, e)
+      : getAdmin(e, adminname, password);
+  };
+
+  const getAdmin = async (e, adminname, password) => {
+    e.preventDefault();
+
+    try {
+      const res = await axios.get(`http://localhost:5000/admin`);
+      const adminData = res.data;
+      console.log(adminData);
+      const admin = adminData.find((admin) => admin.adminname === adminname);
+      console.log(admin);
+      const adminPassword = admin.password === password;
+      console.log(admin);
+      if (admin) {
+        if (adminPassword) {
+          toast.success("Welcome back!");
+          navigate("/admin-dashboard");
+        } else {
+          toast.error("Wrong password! Please try again.");
+        }
+      } else {
+        toast.error(`Oops! you are not admin, please check the admin name`);
+        passwordInp.current.value = "";
+        adminnameInp.current.focus();
+      }
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -40,12 +62,12 @@ export const AdminLogin = () => {
           <form action="" className="w-full flex flex-col gap-5">
             <div className="form-control flex flex-col justify-center gap-2">
               <label htmlFor="email" className="text-[1rem] font-bold">
-                Email
+                Admin Name
               </label>
               <input
-                ref={emailInp}
+                ref={adminnameInp}
                 type="text"
-                placeholder="Enter Email Address"
+                placeholder="Enter Admin Name"
                 className="bg-[#efefef] px-3 py-3 rounded-[8px] focus:outline-gray-600"
               />
             </div>
@@ -54,7 +76,7 @@ export const AdminLogin = () => {
                 Password
               </label>
               <input
-                ref={passInp}
+                ref={passwordInp}
                 type="password"
                 placeholder="Enter Password"
                 className="bg-[#efefef] px-3 py-3 rounded-[8px] focus:outline-gray-600"

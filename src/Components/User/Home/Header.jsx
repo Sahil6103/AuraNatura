@@ -90,7 +90,6 @@ export const Header = () => {
         >
           <img src={LogoIcon} alt="" />
         </Link>
-        {/* </span> */}
         <nav className="flex md:gap-6 justify-center  md:justify-end items-center md:w-[255px]">
           <Search01Icon color="black" size={24} className="bg-transparent" />
           <Link to="/cart" className="ms-3 md:ms-0">

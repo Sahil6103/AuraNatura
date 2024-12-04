@@ -6,8 +6,11 @@ import { MenPerfume } from "../assets/index";
 import { WomenPerfume } from "../assets/index";
 import { HeadingBanner } from "../Components/Common/HeadingBanner";
 import { UseScrollTop } from "../Components/Common/UseScrollTop";
+import axios from "axios";
+import { UnavailableIcon } from "hugeicons-react";
 
 export const Men = () => {
+  const [products, setProducts] = useState([]);
   UseScrollTop();
 
   const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -22,16 +25,33 @@ export const Men = () => {
     }
   };
 
+  const fetchProducts = async () => {
+    try {
+      const res = await axios.get("http://localhost:5000/products");
+      // setProducts(res.data);
+      // console.log(products);
+      const manPerfume = res.data.filter(
+        (product) =>
+          product.proCategory && product.proCategory.toLowerCase() === "man"
+      );
+      setProducts(manPerfume);
+      // console.log(manPerfume);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   useEffect(() => {
     // Scroll to the top when the component mounts
     window.scrollTo(0, 0);
+    fetchProducts();
   }, []);
 
   return (
     <>
       <HeadingBanner heading="Men's Collection" page="Men's Collection" />
       <div className="men flex flex-col gap-8 px-4 md:px-10 py-10">
-        <div className="main-content md:relative flex flex-col md:flex-row justify-center items-start gap-8 md:gap-10 xl:gap-16 ">
+        <div className="main-content md:relative flex flex-col md:flex-row justify-between items-start gap-8 md:gap-10 xl:gap-16 ">
           <button
             className="flex md:hidden justify-center items-center gap-2 self-start px-8 py-1.5 bg-[#b48b5e] text-[#e9e9e9]"
             onClick={toggleSidebar}
@@ -53,17 +73,26 @@ export const Men = () => {
             <Filter closeSidebar={closeSidebar} />
           </div>
 
-          <div className="products grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 md:gap-16 lg:gap-10">
-            <ProductCard src={MenPerfume} productName="Light" price="500" />
-            <ProductCard src={WomenPerfume} productName="Light" price="500" />
-            <ProductCard src={MenPerfume} productName="Light" price="500" />
-            <ProductCard src={WomenPerfume} productName="Light" price="500" />
-            <ProductCard src={MenPerfume} productName="Light" price="500" />
-            <ProductCard src={MenPerfume} productName="Light" price="500" />
-            <ProductCard src={WomenPerfume} productName="Light" price="500" />
-            <ProductCard src={WomenPerfume} productName="Light" price="500" />
-            <ProductCard src={WomenPerfume} productName="Light" price="500" />
-            <ProductCard src={WomenPerfume} productName="Light" price="500" />
+          <div className="products w-full">
+            {products.length > 0 ? (
+              <div className="products grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 md:gap-16 lg:gap-10">
+                {products.map((product) => (
+                  <ProductCard
+                    key={product.proId}
+                    src={MenPerfume}
+                    productName={product.proTitle}
+                    price={product.proPrice}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div className="flex flex-col justify-center items-center md:self-start gap-2">
+                <UnavailableIcon color="silver" size={100} />
+                <span className="text-[2rem] text-gray-400">
+                  No products found!
+                </span>
+              </div>
+            )}
           </div>
         </div>
       </div>

@@ -1,22 +1,154 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import {
   Card,
   Input,
   Typography,
   Select,
   Option,
-  Textarea,
+  // Textarea,
 } from "@material-tailwind/react";
+import { ProductImg, showToastAndFocus } from "../../../assets/index";
+import toast, { Toaster } from "react-hot-toast";
+import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
+import { useSelector, useDispatch } from "react-redux";
+import { clearSelectedProduct } from "../../../redux/EditProductSlice";
+// import ReactQuill from "react-quill";
+// import "react-quill/dist/quill.snow.css"; // Import Quill styles
 
 export function AddProducts() {
+  const dispatch = useDispatch();
+  const selectedProduct = useSelector((state) => state.product.selectedProduct);
+
+  const [formData, setFormData] = useState({
+    proTitle: "",
+    proDesc: "",
+    proStock: "",
+    proPrice: "",
+    proCategory: "",
+  });
+
+  useEffect(() => {
+    if (selectedProduct) {
+      setFormData({
+        proTitle: selectedProduct.proTitle || "",
+        proDesc: selectedProduct.proDesc || "",
+        proStock: selectedProduct.proStock || "",
+        proPrice: selectedProduct.proPrice || "",
+        proCategory: selectedProduct.proCategory || "",
+      });
+    } else {
+      setFormData({
+        proTitle: "",
+        proDesc: "",
+        proStock: "",
+        proPrice: "",
+        proCategory: "",
+      });
+    }
+
+    return () => dispatch(clearSelectedProduct());
+  }, [selectedProduct, dispatch]);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({
+      ...formData,
+      [name]: value,
+    });
+  };
+  // const [description, setDescription] = useState("");
+
+  // const handleDescriptionChange = (value) => {
+  //   setDescription(value);
+  // };
+
+  // const proTitleInp = useRef(null);
+  // const proDescInp = useRef(null);
+  // const proStockInp = useRef(null);
+  // const proPriceInp = useRef(null);
+  // const proCategoryInp = useRef(null);
+  // const proImgs = useRef(null);
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // const proTitle = proTitleInp.current?.value;
+    // const proDesc = proDescInp.current?.value;
+    // const proStock = proStockInp.current?.value;
+    // const proPrice = proPriceInp.current?.value;
+    // const proCategory = proCategoryInp.current?.value;
+    // const proImgs = proImgs.current?.files;
+
+    const { proTitle, proDesc, proStock, proPrice, proCategory } = formData;
+
+    !proTitle
+      ? showToastAndFocus("Enter Product Title!", proTitleInp, e)
+      : !proDesc
+      ? showToastAndFocus("Enter Product Description!", proDescInp, e)
+      : !proStock
+      ? showToastAndFocus("Enter Product Stock!", proStock, e)
+      : !proPrice
+      ? showToastAndFocus("Enter Product Price!", proPriceInp, e)
+      : !proCategory || proCategory === "Select Category"
+      ? showToastAndFocus("Select Product Category!", proCategoryInp, e)
+      : // : !proImages || proImages.length === 0
+        // ? showToastAndFocus("Add Products images!", proImgs, e)
+        saveProducts(e);
+  };
+
+  const saveProducts = async (e) => {
+    e.preventDefault();
+    // console.log(selectedProduct.proId);
+
+    const productObj = {
+      id: selectedProduct ? selectedProduct.id : uuidv4(),
+      ...formData,
+    };
+
+    try {
+      if (selectedProduct && selectedProduct.id) {
+        await axios.put(
+          `http://localhost:5000/products/${selectedProduct.id}`,
+          productObj
+        );
+        toast.success("Product updated successfully!");
+      } else {
+        await axios.post("http://localhost:5000/products", productObj);
+        toast.success("Product added successfully!");
+      }
+      // console.log(res);
+      // proTitleInp.current.value = "";
+      // proDescInp.current.value = "";
+      // proStockInp.current.value = "";
+      // proPriceInp.current.value = "";
+      // proCategoryInp.current.value = "";
+      // proImgs.current.value = null;
+
+      setFormData({
+        proTitle: "",
+        proDesc: "",
+        proStock: "",
+        proPrice: "",
+        proCategory: "",
+      });
+
+      dispatch(clearSelectedProduct());
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <div className="flex flex-col gap-5">
-      <h1 className="text-[1.8rem] font-bold">Add Products</h1>
+      <h1 className="text-[1.8rem] font-bold">
+        {selectedProduct ? "Update Product" : "Add Product"}
+      </h1>
       <Card
         shadow={true}
         className="w-full md:w-[80%] lg:w-[60%] px-6 md:px-10 rounded-lg"
       >
-        <form className="py-8">
+        <form onSubmit={handleSubmit} className="py-8">
           <div className="mb-1 flex flex-col gap-6">
             <Typography
               variant="h6"
@@ -27,6 +159,10 @@ export function AddProducts() {
             </Typography>
             <Input
               size="lg"
+              name="proTitle"
+              // inputRef={proTitleInp}
+              value={formData.proTitle}
+              onChange={handleInputChange}
               placeholder="Enter Product Title"
               className="!bg-[#efefef] rounded-[8px]"
               labelProps={{
@@ -40,11 +176,15 @@ export function AddProducts() {
             >
               Product Description
             </Typography>
-            <Textarea
+            <textarea
+              name="proDesc"
+              // ref={proDescInp} // Use inputRef for Textarea
+              value={formData.proDesc}
+              onChange={handleInputChange}
               rows={5}
               size="lg"
               placeholder="Enter Product Description"
-              className="!bg-[#efefef] rounded-[8px]"
+              className="!bg-[#efefef] rounded-[8px] p-3"
             />
             <Typography
               variant="h6"
@@ -54,6 +194,10 @@ export function AddProducts() {
               Product Stock
             </Typography>
             <Input
+              // inputRef={proStockInp}
+              name="proStock"
+              value={formData.proStock}
+              onChange={handleInputChange}
               type="text"
               size="lg"
               placeholder="Enter Product Stock"
@@ -70,6 +214,10 @@ export function AddProducts() {
               Product Price
             </Typography>
             <Input
+              name="proPrice"
+              // inputRef={proPriceInp}
+              value={formData.proPrice}
+              onChange={handleInputChange}
               type="text"
               size="lg"
               placeholder="Enter Product Price"
@@ -86,13 +234,17 @@ export function AddProducts() {
               Select Category
             </Typography>
             <select
+              // ref={proCategoryInp}
+              name="proCategory"
+              value={formData.proCategory}
+              onChange={handleInputChange}
               id="category"
-              className="bg-[#efefef] rounded-lg block w-full p-2.5 "
+              className="bg-[#efefef] rounded-lg block w-full p-2.5"
             >
               <option selected>Select Category</option>
-              <option value="US">Man</option>
-              <option value="CA">Woman</option>
-              <option value="FR">Exclusive</option>
+              <option value="Man">Man</option>
+              <option value="Woman">Woman</option>
+              <option value="Exclusive">Exclusive</option>
             </select>
 
             <Typography
@@ -131,16 +283,24 @@ export function AddProducts() {
                     SVG, PNG, JPG or GIF
                   </p>
                 </div>
-                <input id="dropzone-file" type="file" class="hidden" multiple />
+                <input
+                  // ref={proImgs}
+                  id="dropzone-file"
+                  type="file"
+                  class="hidden"
+                  multiple
+                />
               </label>
             </div>
           </div>
 
           <button
-            className="mt-6 bg-cyan-600 text-white font-bold tracking-wide rounded-[8px] px-5 py-2"
+            type="submit"
+            // onClick={handleSubmit}
+            className="mt-6 bg-cyan-600 text-white font-bold tracking-wider rounded-[8px] px-5 py-2"
             fullWidth
           >
-            Upload Product
+            {selectedProduct ? "Update Product" : "Add Product"}
           </button>
         </form>
       </Card>

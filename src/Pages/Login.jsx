@@ -10,10 +10,14 @@ import {
 import { UseScrollTop } from "../Components/Common/UseScrollTop";
 import toast, { Toaster } from "react-hot-toast";
 import { showToastAndFocus } from "../assets/index";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 export const Login = () => {
   // Render Component from the top
   UseScrollTop();
+
+  const navigate = useNavigate();
 
   const [Hide, setHide] = useState(true);
 
@@ -44,7 +48,7 @@ export const Login = () => {
   };
 
   const emailInp = useRef(null);
-  const passInp = useRef(null);
+  const passwordInp = useRef(null);
 
   const emailRegex =
     /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
@@ -59,19 +63,47 @@ export const Login = () => {
 
   const notify = (e) => {
     const email = emailInp.current.value;
-    const password = passInp.current.value;
-
+    const password = passwordInp.current.value;
     !email
       ? showToastAndFocus("Please enter Email!", emailInp, e)
       : !password
-      ? showToastAndFocus("Please enter password!", passInp, e)
+      ? showToastAndFocus("Please enter password!", passwordInp, e)
       : !emailRegex.test(email)
       ? showToastAndFocus("Please enter a valid Email!", emailInp, e)
       : !passwordRegex.test(password)
-      ? showToastAndFocus("Please enter a valid password!", passInp, e)
-      : null;
-
+      ? showToastAndFocus("Please enter a valid password!", passwordInp, e)
+      : getUser(e, email, password);
+    // passing email and password as an argument in the function
     // Proceed if all validations pass
+  };
+
+  // getting email and password from the notify function and use them to check the entered email and password is correct or not.
+  const getUser = async (e, email, password) => {
+    e.preventDefault();
+
+    try {
+      const res = await axios.get(
+        `https://673ebc2fa9bc276ec4b57911.mockapi.io/users`
+      );
+      const users = res.data;
+      console.log(users);
+      const user = users.find((user) => user.email === email);
+      const userPassword = user.password === password;
+      console.log(user);
+      if (user) {
+        if (userPassword) {
+          toast.success("Welcome back!");
+          navigate("/");
+        } else {
+          toast.error("Wrong password! Please try again.");
+        }
+      } else {
+        toast.error(`Oops! This email isn't on our list.
+          Register now!`);
+      }
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   return (
@@ -101,7 +133,7 @@ export const Login = () => {
             </div>
             <div className="input-control relative w-full">
               <input
-                ref={passInp}
+                ref={passwordInp}
                 type={Hide ? "password" : "text"}
                 placeholder="Password"
                 className="relative py-2 w-full border-b-2 border-gray-300 bg-transparent text-[#202020] text-[1.2rem] focus:outline-none focus:border-black hover:border-black placeholder:text-gray-400"

@@ -1,14 +1,19 @@
 import React, { useRef, useState } from "react";
 import { HeadingBanner } from "../Components/Common/HeadingBanner";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { ViewOffIcon, ViewIcon, InformationSquareIcon } from "hugeicons-react";
 import { UseScrollTop } from "../Components/Common/UseScrollTop";
 import toast, { Toaster } from "react-hot-toast";
 import { showToastAndFocus } from "../assets/index";
+import { v4 as uuidv4 } from "uuid";
+import axios from "axios";
 
 export const Register = () => {
+  const navigate = useNavigate();
+
   UseScrollTop();
 
+  // password show/hide functionality
   const [Hide, setHide] = useState(true);
 
   const toggleHide = () => {
@@ -27,6 +32,7 @@ export const Register = () => {
     />
   );
 
+  // password requirement toast
   const showInfo = () => {
     toast(() => (
       <p>
@@ -37,9 +43,10 @@ export const Register = () => {
     ));
   };
 
+  // form validation
   const fullnameInp = useRef(null);
   const emailInp = useRef(null);
-  const passInp = useRef(null);
+  const passwordInp = useRef(null);
 
   const emailRegex =
     /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
@@ -50,7 +57,7 @@ export const Register = () => {
   const notify = (e) => {
     const fullname = fullnameInp.current.value;
     const email = emailInp.current.value;
-    const password = passInp.current.value;
+    const password = passwordInp.current.value;
 
     !fullname || !email || !password
       ? showToastAndFocus("Please fill all the fields!", fullnameInp, e)
@@ -59,9 +66,49 @@ export const Register = () => {
       : !emailRegex.test(email)
       ? showToastAndFocus("Please enter a valid Email!", emailInp, e)
       : !passwordRegex.test(password)
-      ? showToastAndFocus("Please enter a valid password!", passInp, e)
-      : null;
+      ? showToastAndFocus("Please enter a valid password!", passwordInp, e)
+      : saveUser(e);
     // All validations passed, proceed with the form submission
+  };
+
+  const saveUser = async (e) => {
+    e.preventDefault();
+
+    // getting data into object
+    const userObj = {
+      id: uuidv4(),
+      fullname: fullnameInp.current.value,
+      email: emailInp.current.value,
+      password: passwordInp.current.value,
+    };
+
+    // using axios to save the data into json file
+    try {
+      const res = await axios.get(
+        `https://673ebc2fa9bc276ec4b57911.mockapi.io/users`
+      );
+
+      const users = res.data;
+
+      const checkEmail = users.some((user) => user.email === userObj.email);
+
+      if (checkEmail) {
+        e.preventDefault();
+        toast.error("Email already regirstered, you can login directly!");
+        emailInp.current.focus();
+      } else {
+        const response = await axios.post(
+          `https://673ebc2fa9bc276ec4b57911.mockapi.io/users`,
+          userObj
+        );
+        toast.success("Registered successfully!");
+        console.log("response", response);
+        navigate("/");
+      }
+    } catch (err) {
+      console.log(err);
+      toast.error("Something went wrong!");
+    }
   };
 
   return (
@@ -99,7 +146,7 @@ export const Register = () => {
             </div>
             <div className="input-control relative w-full">
               <input
-                ref={passInp}
+                ref={passwordInp}
                 type={Hide ? "password" : "text"}
                 placeholder="Password"
                 className="relative py-2 w-full border-b-2 border-gray-300 bg-transparent text-[#202020] text-[1.2rem] focus:outline-none focus:border-black hover:border-black placeholder:text-gray-400"

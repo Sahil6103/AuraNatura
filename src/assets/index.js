@@ -29,5 +29,5 @@ import toast, { Toaster } from "react-hot-toast";
 export const showToastAndFocus = (message, ref, e) => {
   e.preventDefault();
   toast.error(message);
-  ref.current.focus();
+  ref?.current?.focus();
 };

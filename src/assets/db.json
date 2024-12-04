@@ -1,3 +1,92 @@
 {
-  "feedback": []
+  "admin": [
+    {
+      "id": "1",
+      "adminname": "abc",
+      "password": "abc123"
+    },
+    {
+      "id": "2",
+      "adminname": "sahil",
+      "password": "sahil123"
+    }
+  ],
+  "category": [
+    {
+      "id": "9adc",
+      "categoryId": "06d7749c-d193-44f9-9300-03a54afa1390",
+      "categoryTitle": "Man",
+      "categoryDesc": "\nDiscover the perfect scent for every man with our carefully curated collection of men’s perfumes. Designed to embody confidence, strength, and sophistication, these fragrances offer a diverse range of profiles, from fresh and invigorating citrus notes to deep, woody, and musky undertones. Whether you’re looking for something light and refreshing for daytime wear or a bold, intense scent for evening occasions, our selection caters to all preferences. Crafted with premium ingredients, each fragrance is meant to enhance your presence and leave a lasting impression. Embrace your individuality and find the scent that defines your style."
+    },
+    {
+      "id": "345f",
+      "categoryId": "15e3ebea-fc9b-42ad-a4fb-62a5ebb1759e",
+      "categoryTitle": "Woman",
+      "categoryDesc": "Immerse yourself in the world of enchanting scents with our curated selection of women’s perfumes. From delicate florals to deep, alluring aromas, each fragrance is designed to capture the essence of femininity. Whether you're seeking a fresh, uplifting scent for everyday wear or a luxurious, captivating fragrance for evening outings, our collection offers a perfect match for every mood and occasion. Let each spray be a reflection of your inner beauty, leaving a lasting impression wherever you go."
+    },
+    {
+      "id": "6859",
+      "categoryId": "0e26fe58-65ec-4036-b974-567aa2012eed",
+      "categoryTitle": "Exclusive",
+      "categoryDesc": "\nIndulge in the luxurious allure of our exclusive perfume collection, where every fragrance is a masterpiece crafted from the finest ingredients. Designed for those who seek distinction, these scents offer an unparalleled blend of rare notes, creating an unforgettable olfactory experience. Perfect for special occasions or those moments when you want to make a lasting impression, each exclusive perfume is a statement of elegance, sophistication, and individuality. Embrace the art of fragrance with a scent that is as unique as you are."
+    }
+  ],
+  "products": [
+    {
+      "id": "8efc14ca-26d0-49b5-b6e3-f0a51bf95666",
+      "proTitle": "Ralph Lauren",
+      "proDesc": "The Ralph Lauren fragrance line includes a variety of high-end scents for men, including Ralph, Romance, and several other fragrances for men. While sole leather evokes fresh air, liberty, and a relaxed evocation of florals, sole perfume is a tribute to the populace's trendsetting scent. The G-Stone collection of men's fragrances prepares men for all of life's \"playing fields\" with these four characteristics: wholesome, seductive, adventurous, and stylish while delivering long-lasting emotions.",
+      "proStock": "50",
+      "proPrice": "4999",
+      "proCategory": "Man"
+    },
+    {
+      "id": "0afd52d2-c8f8-4a65-8b80-ab7af7fb1d45",
+      "proTitle": "Nautica Voyage",
+      "proDesc": "The greatest candidates for this perfume are young high school or college men interested in discovering various scents to complement their personalities. It is new and exciting, and ideal for young males. Men of various ages may wear this scent because it is so adaptable. Overall, Nautica Voyage is a fantastic performing, affordable alternative for men's scent that explores the greatest aspects of marine life to elicit a freshness and rawness unmatched by any other.",
+      "proStock": "50",
+      "proPrice": "2999",
+      "proCategory": "Man"
+    },
+    {
+      "id": "5d5650bf-1286-4b00-86e3-b9444a523f65",
+      "proTitle": "Musk E Rizali",
+      "proDesc": "The fragrance typically opens with fresh or spicy top notes, such as bergamot, saffron, or cardamom, offering an enticing introduction. The heart reveals a harmonious blend of florals like rose, jasmine, or neroli, balanced with aromatic woods or resinous accords. As it settles, the base unveils a warm and sensual composition of amber, vanilla, oud, and white musk, leaving a lasting impression. Known for its excellent longevity and bold sillage, Musk e Rizali is perfect for special occasions or evening wear, enveloping the wearer in an aura of refinement and allure.",
+      "proStock": "25",
+      "proPrice": "1299",
+      "proCategory": "Man"
+    },
+    {
+      "id": "472b194c-c03b-416f-8e8f-1972ec99fb6c",
+      "proTitle": "Bvlgari Man in Black",
+      "proDesc": "The fragrance opens with a vibrant and spicy blend of rum and cardamom, immediately creating a warm and intriguing aura. At its heart, floral and leathery accords emerge, featuring tuberose, iris, and leather, adding depth and a luxurious texture. The base notes consist of benzoin, tonka bean, and guaiac wood, providing a smoky, creamy, and sensual finish.",
+      "proStock": "10",
+      "proPrice": "3999",
+      "proCategory": "Man"
+    },
+    {
+      "id": "67e1bb1d-c531-40b3-aaf4-c6358731689c",
+      "proTitle": "Creed",
+      "proDesc": "Each Creed fragrance tells a unique story, often inspired by historical events, exotic locations, or celebrated individuals. Popular offerings like Aventus, a bold and dynamic scent with notes of pineapple, birch, and musk, and Green Irish Tweed, a fresh and sophisticated blend of iris, lemon verbena, and sandalwood, exemplify the brand's versatility and artistry.\n\nCreed fragrances are celebrated for their exceptional longevity, refined compositions, and luxurious presentation. Whether light and airy or rich and opulent, Creed perfumes cater to connoisseurs seeking a signature scent that exudes confidence, elegance, and individuality.",
+      "proStock": "50",
+      "proPrice": "3599",
+      "proCategory": "Man"
+    },
+    {
+      "id": "36f1a43b-3ce3-4325-9f42-9c069b702433",
+      "proTitle": "Dior J'adore l'Or Essence de Parfume",
+      "proDesc": "At its heart, J’adore L’Or celebrates the lush beauty of May Rose and Grasse Jasmine absolutes, cultivated in the fields of southern France. These floral notes are accentuated by the creamy sweetness of Tahitian vanilla and the earthy warmth of tonka bean. The addition of labdanum resin and patchouli lends a resinous depth and a sensual, amber-like finish.",
+      "proStock": "25",
+      "proPrice": "5899",
+      "proCategory": "Woman"
+    },
+    {
+      "id": "4d70a96c-3fbe-4b47-aa94-550c4ed763f5",
+      "proTitle": "Bright Crystal",
+      "proDesc": "Versace Bright Crystal is a radiant and feminine fragrance that exudes elegance, freshness, and allure. Inspired by the beauty of a crystal, this perfume is a perfect blend of fruity, floral, and musky notes, creating a light yet captivating scent.\n\nThe fragrance opens with a refreshing burst of pomegranate and yuzu, accented by a hint of frosty freshness that immediately invigorates the senses. The heart reveals a delicate bouquet of peony, magnolia, and lotus, offering a soft and floral sweetness. The base is grounded with warm and sensual notes of musk, amber, and mahogany, providing depth and a lasting impression.",
+      "proStock": "35",
+      "proPrice": "3599",
+      "proCategory": "Woman"
+    }
+  ]
 }

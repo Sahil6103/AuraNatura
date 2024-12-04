@@ -2,7 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Card, Typography } from "@material-tailwind/react";
 import axios from "axios";
 import toast from "react-hot-toast";
-import { MultiplicationSignIcon } from "hugeicons-react";
+import { MultiplicationSignIcon, WhatsappIcon } from "hugeicons-react";
+import { ExportToExcel } from "./ExportToExcel";
 
 export const ManageReviews = () => {
   const [feedback, setFeedback] = useState([]); // State for feedback
@@ -58,18 +59,49 @@ export const ManageReviews = () => {
     }
   };
 
+  const [data, setData] = React.useState([]);
+  const fileName = "myfile";
+
+  useEffect(() => {
+    const fetchData = () => {
+      axios
+        .get("https://673ebc2fa9bc276ec4b57911.mockapi.io/feedback")
+        .then((res) => {
+          setData(res.data);
+        });
+    };
+    fetchData();
+  }, []);
+
+  // direct reply on whatsapp chat
+  // const handleWhatsapp = (mobile) => {
+  //   if (!mobile) {
+  //     toast.error("Mobile number is not available!");
+  //     return;
+  //   }
+
+  //   const message = encodeURIComponent(
+  //     "Hello! I wanted to reach out regarding your feedback."
+  //   );
+  //   const whatsappURL = `https://wa.me/${mobile}?text=${message}`;
+  //   window.open(whatsappURL, "_blank");
+  // };
+
   return (
     <div className="list flex flex-col px-4 md:px-16 py-10">
       <div className="list mb-4 flex justify-between items-center">
         <h1 className="text-[1.8rem] font-bold text-[#b48b5e] w-full md:w-fit">
           Manage Reviews
         </h1>
-        <button
-          onClick={handleDeleteAll}
-          className="px-3 py-1.5 bg-red-500 hover:bg-red-600 text-white font-semibold tracking-wider rounded-md transition-all duration-300"
-        >
-          Clear all Feedbacks
-        </button>
+        <div className="buttons flex gap-3">
+          <ExportToExcel apiData={data} fileName={fileName} />
+          <button
+            onClick={handleDeleteAll}
+            className="px-3 py-1.5 bg-red-500 hover:bg-red-600 text-white font-semibold tracking-wider rounded-md transition-all duration-300"
+          >
+            Clear all Feedbacks
+          </button>
+        </div>
       </div>
       <Card className="h-full w-full overflow-scroll">
         <table className="w-full min-w-max table-auto text-left">

@@ -52,6 +52,11 @@
   src: url("./assets/fonts/brandon-grotesque-font-family-1716364929-0/HvDTrial_Brandon_Grotesque_light-BF64a625c93e709.otf");
 }
 
+::selection {
+  color: white;
+  background-color: black;
+}
+
 .hero p,
 .fragrance h1,
 .product-collection h1,
