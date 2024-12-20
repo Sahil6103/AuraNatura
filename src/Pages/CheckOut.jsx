@@ -5,7 +5,7 @@ import toast, { Toaster } from "react-hot-toast";
 import { showToastAndFocus } from "../assets/index";
 
 export const CheckOut = () => {
-  // UseScrollTop();
+  UseScrollTop();
 
   const firstnameInp = useRef(null);
   const lastnameInp = useRef(null);

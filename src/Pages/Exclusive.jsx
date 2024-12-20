@@ -7,6 +7,7 @@ import { WomenPerfume } from "../assets/index";
 import { HeadingBanner } from "../Components/Common/HeadingBanner";
 import { UseScrollTop } from "../Components/Common/UseScrollTop";
 import axios from "axios";
+import { UnavailableIcon } from "hugeicons-react";
 
 export const Exclusive = () => {
   const [products, setProducts] = useState([]);
@@ -67,7 +68,7 @@ export const Exclusive = () => {
             <Filter closeSidebar={closeSidebar} />
           </div>
 
-          <div className="products grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 md:gap-16 lg:gap-10">
+          {/* <div className="products grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 md:gap-16 lg:gap-10">
             {products.map((product) => (
               <ProductCard
                 key={product.proId}
@@ -76,6 +77,27 @@ export const Exclusive = () => {
                 price={product.proPrice}
               />
             ))}
+          </div> */}
+          <div className="products w-full">
+            {products.length > 0 ? (
+              <div className="products grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-10 md:gap-16 lg:gap-10">
+                {products.map((product) => (
+                  <ProductCard
+                    key={product.proId}
+                    src={MenPerfume}
+                    productName={product.proTitle}
+                    price={product.proPrice}
+                  />
+                ))}
+              </div>
+            ) : (
+              <div className="flex flex-col justify-center items-center md:self-start gap-2">
+                <UnavailableIcon color="silver" size={100} />
+                <span className="text-[2rem] text-gray-400">
+                  No products found!
+                </span>
+              </div>
+            )}
           </div>
         </div>
       </div>

@@ -64,6 +64,7 @@ export const Login = () => {
   const notify = (e) => {
     const email = emailInp.current.value;
     const password = passwordInp.current.value;
+
     !email
       ? showToastAndFocus("Please enter Email!", emailInp, e)
       : !password

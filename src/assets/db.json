@@ -87,6 +87,102 @@
       "proStock": "35",
       "proPrice": "3599",
       "proCategory": "Woman"
+    },
+    {
+      "id": "18f86ced-4332-4a7a-995b-43c3d223231a",
+      "proTitle": "London Morning",
+      "proDesc": "London Morning perfume captures the essence of a crisp, invigorating morning in the heart of the bustling city. This fragrance opens with a refreshing blend of citrus notes, reminiscent of the first rays of sunlight breaking through the iconic London skyline. The heart reveals a delicate harmony of floral accords, echoing the blooming gardens and fresh air of the city's parks. Finally, warm woody undertones and a hint of amber provide a grounding base, evoking the timeless elegance of London's charm. Perfect for those who seek a modern, sophisticated scent that embodies the vibrancy and serenity of a London morning.",
+      "proStock": "50",
+      "proPrice": "4899",
+      "proCategory": "Woman"
+    },
+    {
+      "id": "f83c933f-d3e6-49d5-b2e4-22a179e4f4f1",
+      "proTitle": "Party Girl",
+      "proDesc": "\nParty Girl perfume is a bold and electrifying fragrance that embodies the spirit of fun, freedom, and unforgettable nights. Bursting with vibrant top notes of juicy berries and sparkling citrus, it instantly captures the energy of the dance floor. The heart blooms with exotic florals and sweet vanilla, adding a touch of seductive allure. A sultry base of amber and musk lingers, leaving a trail of confidence and mystery wherever you go. Designed for the life of the party, this scent is perfect for turning heads and making memories that shine as brightly as you do.",
+      "proStock": "10",
+      "proPrice": "3999",
+      "proCategory": "Woman"
+    },
+    {
+      "id": "0cb3a6ac-ff58-48af-b0ba-8f549ce73132",
+      "proTitle": "Secret Temptation Romance",
+      "proDesc": "Secret Temptation Romance perfume is an enchanting blend of passion and elegance, crafted for those who cherish the magic of intimate moments. It opens with a delightful burst of fruity top notes, like a sweet whisper of anticipation. At its heart, a bouquet of blooming roses and exotic jasmine unfolds, symbolizing timeless love and allure. The fragrance rests on a sensual base of creamy sandalwood and warm amber, leaving a lingering impression of sophistication and desire. Perfect for evenings of charm and intimacy, Secret Temptation Romance is your companion in celebrating love’s most unforgettable chapters.",
+      "proStock": "30",
+      "proPrice": "5999",
+      "proCategory": "Woman"
+    },
+    {
+      "id": "1f2c6cfd-183a-4b48-8622-c6c41340fc23",
+      "proTitle": "Aromatics Elixir",
+      "proDesc": "Aromatics Elixir perfume is a timeless and sophisticated fragrance that transcends trends, designed for the confident and elegant individual. This iconic scent opens with a bold blend of fresh herbal and citrus notes, creating an invigorating introduction. The heart reveals a lush bouquet of rose, jasmine, and ylang-ylang, embodying classic femininity and grace. A rich, earthy base of patchouli, oakmoss, and vetiver adds depth and complexity, leaving a captivating and lasting impression. Perfect for those who appreciate the art of perfumery, Aromatics Elixir is more than a fragrance—it’s an experience that celebrates individuality and refinement.",
+      "proStock": "15",
+      "proPrice": "1599",
+      "proCategory": "Woman"
+    },
+    {
+      "id": "1098cd60-1417-4598-834d-1919369f81cf",
+      "proTitle": "Ethereal Wave",
+      "proDesc": "Ethereal Wave perfume is a dreamy and captivating fragrance that evokes the serenity and mystery of a starlit night by the ocean. The scent begins with a fresh burst of aquatic and citrus notes, reminiscent of gentle sea breezes. Its heart reveals a delicate blend of white florals and soft lavender, creating a sense of calm and grace. A base of smooth sandalwood, musk, and a hint of amber adds warmth and depth, like the lingering glow of moonlight on water. Perfect for those who seek an aura of elegance and tranquility, Ethereal Wave is a fragrance that feels both timeless and otherworldly.",
+      "proStock": "10",
+      "proPrice": "6799",
+      "proCategory": "Exclusive"
+    },
+    {
+      "id": "90ead4a9-495a-4c14-8c28-8f3ce62bfe3f",
+      "proTitle": "Lake and Skye Citrus Blonde",
+      "proDesc": "Lake and Skye Citrus Blonde is a radiant and uplifting fragrance that captures the golden warmth of sunlight and the vibrant energy of a citrus grove. It opens with a sparkling blend of zesty lemon, juicy mandarin, and crisp bergamot, creating a fresh and invigorating start. The heart reveals soft floral nuances, including neroli and orange blossom, adding a touch of elegance and femininity. A smooth base of creamy woods and subtle musk grounds the scent, leaving a warm, luminous trail. Perfect for those who love light, cheerful fragrances, Citrus Blonde embodies effortless sophistication and sunny optimism.",
+      "proStock": "15",
+      "proPrice": "5899",
+      "proCategory": "Exclusive"
+    },
+    {
+      "id": "c9d0fe24-ff04-436b-8074-b400eee8559b",
+      "proTitle": "L'Art & La Matiere",
+      "proDesc": "L'Art & La Matière is a luxurious fragrance collection that celebrates the artistry of perfumery and the exceptional quality of raw materials. Each scent is a masterpiece, crafted with meticulous attention to detail to evoke powerful emotions and unforgettable memories. The fragrances in this collection seamlessly blend tradition and innovation, featuring rare and exquisite ingredients such as velvety oud, rich amber, delicate florals, and vibrant citrus. Designed for connoisseurs of fine fragrances, L'Art & La Matière transforms the act of wearing perfume into a profound and personal expression of beauty, elegance, and individuality.",
+      "proStock": "5",
+      "proPrice": "8999",
+      "proCategory": "Exclusive"
+    },
+    {
+      "id": "5a2024c7-4ef5-4b5a-9d3a-482cf3bfe516",
+      "proTitle": "Desert Nights",
+      "proDesc": "Desert Nights is a sensual and mysterious fragrance that captures the enchanting beauty of a starlit evening in the heart of the desert. It opens with a warm, spicy blend of saffron and cardamom, evoking the golden sands illuminated by twilight. The heart reveals a rich fusion of smoky oud, velvety rose, and amber, embodying the allure of the desert’s hidden treasures. A base of deep sandalwood, earthy patchouli, and a whisper of musk lingers like a soft desert breeze, leaving a magnetic and unforgettable trail. Desert Nights is perfect for those who seek a bold and captivating scent that exudes both mystique and elegance.",
+      "proStock": "20",
+      "proPrice": "7899",
+      "proCategory": "Exclusive"
+    },
+    {
+      "id": "d4b8551e-06b5-45ac-b45c-e31e0c4d4ba7",
+      "proTitle": "Parfums de Marly Pegasus",
+      "proDesc": "Parfums de Marly Pegasus is a luxurious and captivating fragrance that embodies the elegance and power of the mythical winged horse. This scent opens with a fresh and invigorating blend of bergamot, almond, and jasmine, creating a vibrant and slightly sweet introduction. The heart unfolds with spicy and floral notes of lavender and spicy vanilla, adding depth and warmth. A rich base of amber, sandalwood, and tonka bean provides a smooth, creamy finish, leaving a lasting impression of sophistication and charm. Pegasus is perfect for those who appreciate a bold yet refined fragrance that evokes both strength and grace.",
+      "proStock": "12",
+      "proPrice": "6599",
+      "proCategory": "Exclusive"
+    },
+    {
+      "id": "f9ed66f5-6a62-4ea2-87b5-c57c27f4f6d3",
+      "proTitle": "The Heart of Leo",
+      "proDesc": "The Heart of Leo is a bold and charismatic fragrance that captures the fiery spirit and regal presence of the Leo zodiac. Opening with vibrant citrus notes of grapefruit and mandarin, it immediately exudes energy and confidence. The heart of the fragrance reveals a luxurious blend of spices, warm florals, and a touch of rose, embodying strength, passion, and elegance. The base is grounded with rich, earthy notes of patchouli, amber, and musk, creating a warm and magnetic trail. The Heart of Leo is for those who embrace their inner leader, radiating power, charm, and an unforgettable aura.",
+      "proStock": "5",
+      "proPrice": "8799",
+      "proCategory": "Exclusive"
+    },
+    {
+      "id": "653b0c62-f290-4496-bc21-ada0fcc0980f",
+      "proTitle": "Moonlight Rose",
+      "proDesc": "Moonlight Rose is a romantic and enchanting fragrance that evokes the mystery and beauty of a moonlit evening. It opens with a delicate blend of fresh, dewy roses and soft citrus, capturing the essence of a garden bathed in the glow of the moon. The heart deepens with layers of velvety jasmine, peony, and a touch of sweet vanilla, adding an air of sophistication and sensuality. A warm, powdery base of musk and sandalwood lingers, creating a soft, comforting finish. Moonlight Rose is perfect for those who seek a fragrance that balances elegance with a touch of mystery, making it ideal for evening wear or special occasions.",
+      "proStock": "15",
+      "proPrice": "8999",
+      "proCategory": "Exclusive"
+    },
+    {
+      "id": "18efbea8-de28-42de-a8a8-b85372e5d509",
+      "proTitle": "Where My Heart Beats",
+      "proDesc": "Where My Heart Beats is a deep, evocative fragrance that captures the essence of love, passion, and connection. It opens with a soft, fresh blend of citrus and green notes, symbolizing the purity and excitement of new beginnings. The heart reveals a beautiful harmony of delicate florals, including rose and jasmine, intertwined with warm, spicy undertones that evoke the intensity of emotions. A rich base of amber, sandalwood, and musk grounds the fragrance, leaving behind a lingering, soulful trail. Where My Heart Beats is for those who seek a fragrance that speaks to their deepest emotions, offering a sense of intimacy and timeless allure.",
+      "proStock": "5",
+      "proPrice": "9999",
+      "proCategory": "Exclusive"
     }
   ]
 }

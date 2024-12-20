@@ -29,6 +29,7 @@ import { ManageProducts } from "../Components/admin/Products/ManageProducts";
 import { ManageSubcategory } from "../Components/admin/Subcategory/ManageSubcategory";
 import { ManageOrders } from "../Components/admin/Orders/ManageOrders";
 import { ManageReviews } from "../Components/admin/Review/ManageReviews";
+// import { ProtectedRoute } from "../Components/Common/ProtectedRoute";
 
 export const AppRoutes = () => {
   return (
