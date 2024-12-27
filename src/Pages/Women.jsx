@@ -9,7 +9,7 @@ import { UseScrollTop } from "../Components/Common/UseScrollTop";
 import axios from "axios";
 import { UnavailableIcon } from "hugeicons-react";
 
-export const Women = () => {
+const Women = () => {
   const [products, setProducts] = useState([]);
   UseScrollTop();
 
@@ -81,6 +81,7 @@ export const Women = () => {
                 {products.map((product) => (
                   <ProductCard
                     key={product.proId}
+                    id={product.id}
                     src={WomenPerfume}
                     productName={product.proTitle}
                     price={product.proPrice}
@@ -101,3 +102,5 @@ export const Women = () => {
     </>
   );
 };
+
+export default Women;

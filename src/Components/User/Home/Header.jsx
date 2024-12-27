@@ -9,7 +9,7 @@ import {
   Search01Icon,
 } from "hugeicons-react";
 
-export const Header = () => {
+export const Header = ({ user, onLogout }) => {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -67,13 +67,37 @@ export const Header = () => {
           >
             Contact Us
           </Link>
-          <Link
-            onClick={toggleMenu}
-            to="/login"
-            className="nav-link hover:text-[#b48b5e] transition-all duration-300 md:hidden"
-          >
-            Login
-          </Link>
+          <div className="flex justify-center items-center gap-2">
+            {user ? (
+              <>
+                <UserIcon size={26} color="black" className="md:hidden" />
+                <span className="text-[1.4rem] text-center pt-1 md:hidden">
+                  {user.fullname}
+                </span>
+              </>
+            ) : (
+              <Link
+                onClick={toggleMenu}
+                to="/login"
+                className="hover:text-[#b48b5e] transition-all duration-300 flex justify-center items-center gap-2"
+              >
+                <span className="md:hidden">Login</span>
+              </Link>
+            )}
+          </div>
+          {user && (
+            <div className="md:hidden">
+              <button
+                onClick={() => {
+                  toggleMenu();
+                  onLogout();
+                }}
+                className="bg-[#b28a79] text-[#f0efed] px-5 py-1"
+              >
+                Logout
+              </button>
+            </div>
+          )}
           <span className="absolute top-6 right-4">
             <MultiplicationSignIcon
               color="black"
@@ -92,12 +116,48 @@ export const Header = () => {
         </Link>
         <nav className="flex md:gap-6 justify-center  md:justify-end items-center md:w-[255px]">
           <Search01Icon color="black" size={24} className="bg-transparent" />
-          <Link to="/cart" className="ms-3 md:ms-0">
-            <ShoppingBasket01Icon color="black" size={25} />
+          <Link
+            to="/cart"
+            className="ms-3 md:ms-0 hover:text-[#b48b5e] transition-all duration-300"
+          >
+            <ShoppingBasket01Icon size={25} />
           </Link>
-          <Link to="/login">
-            <UserIcon color="black" size={26} className="hidden md:block" />
-          </Link>
+          <div>
+            {user ? (
+              <div class="relative hidden md:inline-block group ">
+                {/* <!-- User Icon --> */}
+                <div class="flex items-center justify-center w-10 h-10 bg-gray-300 rounded-full cursor-pointer">
+                  <span className="text-[1.4rem] text-center pt-1 hidden md:block">
+                    {user.fullname[0].toUpperCase()}
+                  </span>
+                </div>
+
+                {/* <!-- Popover --> */}
+                <div class="absolute transform -translate-x-1/2 mt-2 w-40 bg-white border border-gray-200 rounded-lg shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-10">
+                  <div class="p-4">
+                    <p class="text-lg font-semibold text-gray-800">
+                      {user.fullname}
+                    </p>
+                    <p class="text-md text-gray-500">{user.email}</p>
+                  </div>
+                  <hr class="border-gray-200" />
+                  <button
+                    onClick={onLogout}
+                    class="w-full px-4 py-2 text-lg font-semibold tracking-wide text-red-500 hover:bg-red-100 rounded-b-lg focus:outline-none transition-all duration-300"
+                  >
+                    Logout
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <Link
+                to="/login"
+                className="hover:text-[#b48b5e] transition-all duration-300 flex justify-center items-center gap-2"
+              >
+                <UserIcon size={26} className="hidden md:block" />
+              </Link>
+            )}
+          </div>
         </nav>
       </header>
     </>

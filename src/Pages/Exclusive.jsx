@@ -2,14 +2,13 @@ import React, { useEffect, useState } from "react";
 import { Filter } from "../Components/Common/Filter";
 import { FilterHorizontalIcon } from "hugeicons-react";
 import { ProductCard } from "../Components/Common/ProductCard";
-import { MenPerfume } from "../assets/index";
-import { WomenPerfume } from "../assets/index";
+import { ExclusivePerfume1, ExclusivePerfume2 } from "../assets/index";
 import { HeadingBanner } from "../Components/Common/HeadingBanner";
 import { UseScrollTop } from "../Components/Common/UseScrollTop";
 import axios from "axios";
 import { UnavailableIcon } from "hugeicons-react";
 
-export const Exclusive = () => {
+const Exclusive = () => {
   const [products, setProducts] = useState([]);
   UseScrollTop();
 
@@ -84,7 +83,8 @@ export const Exclusive = () => {
                 {products.map((product) => (
                   <ProductCard
                     key={product.proId}
-                    src={MenPerfume}
+                    id={product.id}
+                    src={ExclusivePerfume1}
                     productName={product.proTitle}
                     price={product.proPrice}
                   />
@@ -104,3 +104,5 @@ export const Exclusive = () => {
     </>
   );
 };
+
+export default Exclusive;

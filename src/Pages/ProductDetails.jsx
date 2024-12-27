@@ -1,13 +1,40 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { MenPerfume } from "../assets/index";
 import { PlusSignIcon, Remove01Icon } from "hugeicons-react";
 import { Link } from "react-router-dom";
 import { UseScrollTop } from "../Components/Common/UseScrollTop";
+import { useParams } from "react-router-dom";
+import axios from "axios";
 
 export const ProductDetails = () => {
   UseScrollTop();
+  const { id } = useParams();
+  console.log(id);
+  const [count, setCount] = useState(1);
+  const [product, setProduct] = useState(null); // Set initial state to null
+  const [loading, setLoading] = useState(true);
 
-  let [count, setCount] = useState(1);
+  useEffect(() => {
+    axios
+      .get(`http://localhost:5000/products/${id}`) // Assuming the endpoint takes an ID
+      .then((res) => {
+        setProduct(res.data); // Update product state with fetched data
+      })
+      .catch((err) => {
+        console.log(err);
+      })
+      .finally(() => {
+        setLoading(false);
+      });
+  }, [id]);
+
+  if (loading) {
+    return <h2>Loading...</h2>; // Loading state
+  }
+
+  if (!product) {
+    return <h2>Product not found</h2>; // If product data is not available
+  }
 
   return (
     <>
@@ -18,34 +45,24 @@ export const ProductDetails = () => {
         <div className="product-detail flex flex-col gap-2 w-full lg:w-[60%]">
           <div className="detail flex flex-col">
             <span className="text-[#64748b] text-[1.1.rem] lg:text-[1.2rem]">
-              Men's Perfume
+              {product.proCategory}
             </span>
-            <h1 className="text-[1.5rem] lg:text-[1.8rem] font-semibold">
-              Lorem ipsum dolor sit amet.
+            <h1 className="text-[1.5rem] lg:text-[2rem] font-semibold">
+              {product.proTitle}
             </h1>
             <span className="text-[1.2rem] lg:text-[1.4rem] font-semibold">
               50ML
             </span>
-            <div className="price flex items-center gap-2">
+            <div className="price flex items-center gap-3">
               <span className="line-through lg:text-[1.2rem] text-[#64748b]">
-                &#8377;700.00
+                &#8377;{product.proPrice * 1.5}
               </span>
-              <span className="text-[1.2rem] lg:text-[1.5rem] font-bold">
-                &#8377;500.00
+              <span className="text-[1.3rem] lg:text-[1.6rem] font-bold tracking-wide">
+                &#8377;{product.proPrice}
               </span>
             </div>
-            <p className="text-[1.1rem] w-full lg:w-[85%]">
-              Light by AuraNatura is a refreshing and invigorating men's
-              fragrance designed to uplift and energize your senses. Crafted
-              with a modern blend of bright citrus, crisp greens, and a subtle
-              hint of spice, this scent radiates a clean, fresh vibe perfect for
-              daily wear. The top notes of lemon and bergamot provide a burst of
-              freshness, while heart notes of lavender and sage offer a calming
-              balance. As it settles, the base notes of musk and cedarwood give
-              the fragrance a smooth, warm finish, evoking strength and
-              confidence. "Light" is a perfect choice for the man who seeks
-              elegance in simplicity, leaving a memorable yet understated trail
-              wherever he goes.
+            <p className="text-[1.1rem] w-full lg:w-[85%] mt-4">
+              {product.proDesc}
             </p>
           </div>
           <div className="qty mt-5">

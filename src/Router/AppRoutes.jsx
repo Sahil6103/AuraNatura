@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Routes, Route } from "react-router-dom";
 
 /* ---------------------------- User Components ---------------------------- */
@@ -8,9 +8,12 @@ import { Login } from "../Pages/Login";
 import { Register } from "../Pages/Register";
 import { AboutUs } from "../Pages/AboutUs";
 import { ContactUs } from "../Pages/ContactUs";
-import { Men } from "../Pages/Men";
-import { Women } from "../Pages/Women";
-import { Exclusive } from "../Pages/Exclusive";
+// import { Men } from "../Pages/Men";
+// import { Women } from "../Pages/Women";
+// import { Exclusive } from "../Pages/Exclusive";
+const LazyMen = React.lazy(() => import("../Pages/Men"));
+const LazyWomen = React.lazy(() => import("../Pages/Women"));
+const LazyExclusive = React.lazy(() => import("../Pages/Exclusive"));
 import { Cart } from "../Pages/Cart";
 import { CheckOut } from "../Pages/CheckOut";
 import { ProductDetails } from "../Pages/ProductDetails";
@@ -29,6 +32,7 @@ import { ManageProducts } from "../Components/admin/Products/ManageProducts";
 import { ManageSubcategory } from "../Components/admin/Subcategory/ManageSubcategory";
 import { ManageOrders } from "../Components/admin/Orders/ManageOrders";
 import { ManageReviews } from "../Components/admin/Review/ManageReviews";
+import { Preloader } from "../Components/Common/Preloader";
 // import { ProtectedRoute } from "../Components/Common/ProtectedRoute";
 
 export const AppRoutes = () => {
@@ -41,12 +45,33 @@ export const AppRoutes = () => {
           <Route path="/register" element={<Register />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/contact-us" element={<ContactUs />} />
-          <Route path="/men-collection" element={<Men />} />
-          <Route path="/women-collection" element={<Women />} />
-          <Route path="/exclusive-collection" element={<Exclusive />} />
+          <Route
+            path="/men-collection"
+            element={
+              <Suspense fallback={<Preloader />}>
+                <LazyMen />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/women-collection"
+            element={
+              <Suspense fallback={<Preloader />}>
+                <LazyWomen />
+              </Suspense>
+            }
+          />
+          <Route
+            path="/exclusive-collection"
+            element={
+              <Suspense fallback={<Preloader />}>
+                <LazyExclusive />
+              </Suspense>
+            }
+          />
           <Route path="/cart" element={<Cart />} />
           <Route path="/checkout" element={<CheckOut />} />
-          <Route path="/product-details" element={<ProductDetails />} />
+          <Route path="/product-details/:id" element={<ProductDetails />} />
           <Route path="*" element={<PageNotFound />} />
         </Route>
 

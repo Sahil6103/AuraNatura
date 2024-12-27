@@ -7,6 +7,8 @@ import WomenCollectionImg from "./img/hero/hero13.png";
 import ProductImg from "./img/01.jpeg";
 import MenPerfume from "./img/Products/man-perfume.png";
 import WomenPerfume from "./img/Products/woman-perfume.png";
+import ExclusivePerfume1 from "./img/Products/exclusive1.png";
+import ExclusivePerfume2 from "./img/Products/exclusive2.png";
 import About1Img from "./img/about1.jpg";
 import About2Img from "./img/about2.jpg";
 
@@ -20,6 +22,8 @@ export {
   ProductImg,
   MenPerfume,
   WomenPerfume,
+  ExclusivePerfume1,
+  ExclusivePerfume2,
   About1Img,
   About2Img,
 };
