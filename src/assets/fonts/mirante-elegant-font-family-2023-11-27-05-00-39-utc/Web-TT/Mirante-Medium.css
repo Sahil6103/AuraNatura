@@ -1,12 +1,13 @@
-/* Webfont: Mirante-Medium */@font-face {
-    font-family: 'MiranteMed';
-    src: url('Mirante-Medium.eot'); /* IE9 Compat Modes */
-    src: url('Mirante-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('Mirante-Medium.woff') format('woff'), /* Modern Browsers */
-         url('Mirante-Medium.woff2') format('woff2'), /* Modern Browsers */
-         url('Mirante-Medium.ttf') format('truetype'); /* Safari, Android, iOS */
-             font-style: normal;
-    font-weight: normal;
-    text-rendering: optimizeLegibility;
+/* Webfont: Mirante-Medium */
+@font-face {
+  font-family: "MiranteMed";
+  src: url("Mirante-Medium.eot"); /* IE9 Compat Modes */
+  src:
+    url("Mirante-Medium.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("Mirante-Medium.woff") format("woff"),
+    /* Modern Browsers */ url("Mirante-Medium.woff2") format("woff2"),
+    /* Modern Browsers */ url("Mirante-Medium.ttf") format("truetype"); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
 }
-

@@ -18,8 +18,8 @@ export const AdminLogin = () => {
     !adminname
       ? showToastAndFocus("Enter admin name", adminnameInp, e)
       : !password
-      ? showToastAndFocus("Enter Password!", passwordInp, e)
-      : getAdmin(e, adminname, password);
+        ? showToastAndFocus("Enter Password!", passwordInp, e)
+        : getAdmin(e, adminname, password);
   };
 
   const getAdmin = async (e, adminname, password) => {

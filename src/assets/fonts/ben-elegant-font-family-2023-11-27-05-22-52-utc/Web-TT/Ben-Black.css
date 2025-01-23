@@ -1,11 +1,12 @@
-/* Webfont: Ben-Black */@font-face {
-    font-family: 'BenBlack';
-    src: url('Ben-Black.eot'); /* IE9 Compat Modes */
-    src: url('Ben-Black.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('Ben-Black.woff') format('woff'), /* Modern Browsers */
-         url('Ben-Black.ttf') format('truetype'); /* Safari, Android, iOS */
-             font-style: normal;
-    font-weight: normal;
-    text-rendering: optimizeLegibility;
+/* Webfont: Ben-Black */
+@font-face {
+  font-family: "BenBlack";
+  src: url("Ben-Black.eot"); /* IE9 Compat Modes */
+  src:
+    url("Ben-Black.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("Ben-Black.woff") format("woff"),
+    /* Modern Browsers */ url("Ben-Black.ttf") format("truetype"); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
 }
-

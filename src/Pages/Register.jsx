@@ -64,12 +64,16 @@ export const Register = () => {
     !fullname || !email || !password
       ? showToastAndFocus("Please fill all the fields!", fullnameInp, e)
       : !fullNameRegex.test(fullname)
-      ? showToastAndFocus("Please enter a valid name!", fullnameInp, e)
-      : !emailRegex.test(email)
-      ? showToastAndFocus("Please enter a valid Email!", emailInp, e)
-      : !passwordRegex.test(password)
-      ? showToastAndFocus("Please enter a valid password!", passwordInp, e)
-      : saveUser(e);
+        ? showToastAndFocus("Please enter a valid name!", fullnameInp, e)
+        : !emailRegex.test(email)
+          ? showToastAndFocus("Please enter a valid Email!", emailInp, e)
+          : !passwordRegex.test(password)
+            ? showToastAndFocus(
+                "Please enter a valid password!",
+                passwordInp,
+                e,
+              )
+            : saveUser(e);
     // All validations passed, proceed with the form submission
   };
 
@@ -87,7 +91,7 @@ export const Register = () => {
     // using axios to save the data into json file
     try {
       const res = await axios.get(
-        `https://673ebc2fa9bc276ec4b57911.mockapi.io/users`
+        `https://673ebc2fa9bc276ec4b57911.mockapi.io/users`,
       );
 
       const users = res.data;
@@ -101,7 +105,7 @@ export const Register = () => {
       } else {
         const response = await axios.post(
           `https://673ebc2fa9bc276ec4b57911.mockapi.io/users`,
-          userObj
+          userObj,
         );
         toast.success("Registered successfully!");
         const user = response.data;

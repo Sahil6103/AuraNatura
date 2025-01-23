@@ -1,17 +1,35 @@
-import React, { StrictMode, Suspense } from "react";
+import React, { StrictMode, Suspense, useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
-// import { App } from "./App.jsx";
 const LazyApp = React.lazy(() => import("./App"));
 import "../src/index.css";
 import { Preloader } from "./Components/Common/Preloader";
-// import { Preloader } from "./Components/User/Common/Preloader.jsx";
+
+const AppWithPreloader = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    const handleCompleteLoad = () => setIsLoaded(true);
+
+    window.addEventListener("load", handleCompleteLoad);
+
+    return () => {
+      window.removeEventListener("load", handleCompleteLoad);
+    };
+  }, []);
+
+  if (!isLoaded) {
+    return <Preloader />;
+  }
+
+  return (
+    <React.Suspense fallback={<Preloader />}>
+      <LazyApp />
+    </React.Suspense>
+  );
+};
 
 createRoot(document.getElementById("root")).render(
-  // <StrictMode>
-
-  // <App />
-  <Suspense fallback={<Preloader />}>
-    <LazyApp />
-  </Suspense>
-  // </StrictMode>
+  <React.StrictMode>
+    <AppWithPreloader />
+  </React.StrictMode>,
 );

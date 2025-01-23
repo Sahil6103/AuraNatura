@@ -32,7 +32,7 @@ const Men = () => {
       // console.log(products);
       const manPerfume = res.data.filter(
         (product) =>
-          product.proCategory && product.proCategory.toLowerCase() === "man"
+          product.proCategory && product.proCategory.toLowerCase() === "man",
       );
       setProducts(manPerfume);
       // console.log(manPerfume);

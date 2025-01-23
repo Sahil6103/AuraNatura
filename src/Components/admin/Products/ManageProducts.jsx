@@ -89,7 +89,7 @@ export const ManageProducts = () => {
                   proPrice,
                   proCategory,
                 },
-                index
+                index,
               ) => {
                 const isLast = index === products.length - 1;
                 const classes = isLast ? "p-4" : "p-4 border-b border-gray-300";
@@ -176,7 +176,7 @@ export const ManageProducts = () => {
                     </td>
                   </tr>
                 );
-              }
+              },
             )}
           </tbody>
         </table>

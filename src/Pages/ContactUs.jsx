@@ -36,20 +36,20 @@ export const ContactUs = () => {
     !fullname
       ? showToastAndFocus("Please enter your name!", fullnameInp, e)
       : !email
-      ? showToastAndFocus("Please enter your Email!", emailInp, e)
-      : !subject
-      ? showToastAndFocus(
-          "Please enter subject of your message!",
-          subjectInp,
-          e
-        )
-      : !message
-      ? showToastAndFocus("Please enter your message!", messageInp, e)
-      : !fullNameRegex.test(fullname)
-      ? showToastAndFocus("Please enter a valid name!", fullnameInp, e)
-      : !emailRegex.test(email)
-      ? showToastAndFocus("Please enter a valid Email!", emailInp, e)
-      : saveFeedback(e);
+        ? showToastAndFocus("Please enter your Email!", emailInp, e)
+        : !subject
+          ? showToastAndFocus(
+              "Please enter subject of your message!",
+              subjectInp,
+              e,
+            )
+          : !message
+            ? showToastAndFocus("Please enter your message!", messageInp, e)
+            : !fullNameRegex.test(fullname)
+              ? showToastAndFocus("Please enter a valid name!", fullnameInp, e)
+              : !emailRegex.test(email)
+                ? showToastAndFocus("Please enter a valid Email!", emailInp, e)
+                : saveFeedback(e);
     // All validations passed, proceed with the form submission
   };
 
@@ -69,7 +69,7 @@ export const ContactUs = () => {
     try {
       const response = await axios.post(
         `https://673ebc2fa9bc276ec4b57911.mockapi.io/feedback`,
-        feedbackObj
+        feedbackObj,
       );
       toast.success("Feedback Sent!");
       console.log("response", response);
@@ -88,7 +88,7 @@ export const ContactUs = () => {
           message: feedbackObj.message,
           to_email: "spider61003@gmail.com",
         },
-        publicId
+        publicId,
       );
       console.log("email send to the customer");
     } catch (err) {
@@ -109,7 +109,7 @@ export const ContactUs = () => {
         subject: feedbackObj.subject,
         message: feedbackObj.message,
       },
-      publicId // Correct Public Key
+      publicId, // Correct Public Key
     );
 
     // reset all the fields

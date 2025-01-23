@@ -10,7 +10,7 @@ export const ManageCustomers = () => {
   const fetchUsers = async () => {
     try {
       const response = await axios.get(
-        "https://673ebc2fa9bc276ec4b57911.mockapi.io/users"
+        "https://673ebc2fa9bc276ec4b57911.mockapi.io/users",
       );
       setUser(response.data);
     } catch (error) {

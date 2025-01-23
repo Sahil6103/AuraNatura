@@ -38,32 +38,60 @@ export const CheckOut = () => {
     !firstname
       ? showToastAndFocus("Please enter your first name!", firstnameInp, e)
       : !lastname
-      ? showToastAndFocus("Please enter your last name!", lastnameInp, e)
-      : !email
-      ? showToastAndFocus("Please enter your email!", emailInp, e)
-      : !mobile
-      ? showToastAndFocus("Please enter mobile number!", mobileInp, e)
-      : !house
-      ? showToastAndFocus("Please enter house no. or house name!", houseInp, e)
-      : !address
-      ? showToastAndFocus("Please enter address!", addressInp, e)
-      : !city
-      ? showToastAndFocus("Please enter your city!", cityInp, e)
-      : !state
-      ? showToastAndFocus("Please enter your state!", stateInp, e)
-      : !pin
-      ? showToastAndFocus("Please enter your pin code!", pinInp, e)
-      : !nameRegex.test(firstname)
-      ? showToastAndFocus("Please enter valid first name!", firstnameInp, e)
-      : !nameRegex.test(lastname)
-      ? showToastAndFocus("Please enter valid last name!", lastnameInp, e)
-      : !emailRegex.test(email)
-      ? showToastAndFocus("Please enter valid email!", emailInp, e)
-      : !mobileRegex.test(mobile)
-      ? showToastAndFocus("Please enter valid mobile number!", mobileInp, e)
-      : !pinRegex.test(pin)
-      ? showToastAndFocus("Please enter valid pin code!", pinInp, e)
-      : null;
+        ? showToastAndFocus("Please enter your last name!", lastnameInp, e)
+        : !email
+          ? showToastAndFocus("Please enter your email!", emailInp, e)
+          : !mobile
+            ? showToastAndFocus("Please enter mobile number!", mobileInp, e)
+            : !house
+              ? showToastAndFocus(
+                  "Please enter house no. or house name!",
+                  houseInp,
+                  e,
+                )
+              : !address
+                ? showToastAndFocus("Please enter address!", addressInp, e)
+                : !city
+                  ? showToastAndFocus("Please enter your city!", cityInp, e)
+                  : !state
+                    ? showToastAndFocus("Please enter your state!", stateInp, e)
+                    : !pin
+                      ? showToastAndFocus(
+                          "Please enter your pin code!",
+                          pinInp,
+                          e,
+                        )
+                      : !nameRegex.test(firstname)
+                        ? showToastAndFocus(
+                            "Please enter valid first name!",
+                            firstnameInp,
+                            e,
+                          )
+                        : !nameRegex.test(lastname)
+                          ? showToastAndFocus(
+                              "Please enter valid last name!",
+                              lastnameInp,
+                              e,
+                            )
+                          : !emailRegex.test(email)
+                            ? showToastAndFocus(
+                                "Please enter valid email!",
+                                emailInp,
+                                e,
+                              )
+                            : !mobileRegex.test(mobile)
+                              ? showToastAndFocus(
+                                  "Please enter valid mobile number!",
+                                  mobileInp,
+                                  e,
+                                )
+                              : !pinRegex.test(pin)
+                                ? showToastAndFocus(
+                                    "Please enter valid pin code!",
+                                    pinInp,
+                                    e,
+                                  )
+                                : null;
 
     // All validations passed, proceed with the form submission
   };

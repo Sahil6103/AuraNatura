@@ -1,144 +1,155 @@
 @font-face {
-    font-family: 'Ethos Nova';
-    src: url('EthosNova-HeavyItalic.eot');
-    src: url('EthosNova-HeavyItalic.eot?#iefix') format('embedded-opentype'),
-        url('EthosNova-HeavyItalic.woff2') format('woff2'),
-        url('EthosNova-HeavyItalic.woff') format('woff'),
-        url('EthosNova-HeavyItalic.svg#EthosNova-HeavyItalic') format('svg');
-    font-weight: 900;
-    font-style: italic;
-    font-display: swap;
+  font-family: "Ethos Nova";
+  src: url("EthosNova-HeavyItalic.eot");
+  src:
+    url("EthosNova-HeavyItalic.eot?#iefix") format("embedded-opentype"),
+    url("EthosNova-HeavyItalic.woff2") format("woff2"),
+    url("EthosNova-HeavyItalic.woff") format("woff"),
+    url("EthosNova-HeavyItalic.svg#EthosNova-HeavyItalic") format("svg");
+  font-weight: 900;
+  font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Ethos Nova';
-    src: url('EthosNova-Heavy.eot');
-    src: url('EthosNova-Heavy.eot?#iefix') format('embedded-opentype'),
-        url('EthosNova-Heavy.woff2') format('woff2'),
-        url('EthosNova-Heavy.woff') format('woff'),
-        url('EthosNova-Heavy.svg#EthosNova-Heavy') format('svg');
-    font-weight: 900;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Ethos Nova";
+  src: url("EthosNova-Heavy.eot");
+  src:
+    url("EthosNova-Heavy.eot?#iefix") format("embedded-opentype"),
+    url("EthosNova-Heavy.woff2") format("woff2"),
+    url("EthosNova-Heavy.woff") format("woff"),
+    url("EthosNova-Heavy.svg#EthosNova-Heavy") format("svg");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Ethos Nova';
-    src: url('EthosNova-BoldItalic.eot');
-    src: url('EthosNova-BoldItalic.eot?#iefix') format('embedded-opentype'),
-        url('EthosNova-BoldItalic.woff2') format('woff2'),
-        url('EthosNova-BoldItalic.woff') format('woff'),
-        url('EthosNova-BoldItalic.svg#EthosNova-BoldItalic') format('svg');
-    font-weight: bold;
-    font-style: italic;
-    font-display: swap;
+  font-family: "Ethos Nova";
+  src: url("EthosNova-BoldItalic.eot");
+  src:
+    url("EthosNova-BoldItalic.eot?#iefix") format("embedded-opentype"),
+    url("EthosNova-BoldItalic.woff2") format("woff2"),
+    url("EthosNova-BoldItalic.woff") format("woff"),
+    url("EthosNova-BoldItalic.svg#EthosNova-BoldItalic") format("svg");
+  font-weight: bold;
+  font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Ethos Nova';
-    src: url('EthosNova-Bold.eot');
-    src: url('EthosNova-Bold.eot?#iefix') format('embedded-opentype'),
-        url('EthosNova-Bold.woff2') format('woff2'),
-        url('EthosNova-Bold.woff') format('woff'),
-        url('EthosNova-Bold.svg#EthosNova-Bold') format('svg');
-    font-weight: bold;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Ethos Nova";
+  src: url("EthosNova-Bold.eot");
+  src:
+    url("EthosNova-Bold.eot?#iefix") format("embedded-opentype"),
+    url("EthosNova-Bold.woff2") format("woff2"),
+    url("EthosNova-Bold.woff") format("woff"),
+    url("EthosNova-Bold.svg#EthosNova-Bold") format("svg");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Ethos Nova';
-    src: url('EthosNova-MediumItalic.eot');
-    src: url('EthosNova-MediumItalic.eot?#iefix') format('embedded-opentype'),
-        url('EthosNova-MediumItalic.woff2') format('woff2'),
-        url('EthosNova-MediumItalic.woff') format('woff'),
-        url('EthosNova-MediumItalic.svg#EthosNova-MediumItalic') format('svg');
-    font-weight: 500;
-    font-style: italic;
-    font-display: swap;
+  font-family: "Ethos Nova";
+  src: url("EthosNova-MediumItalic.eot");
+  src:
+    url("EthosNova-MediumItalic.eot?#iefix") format("embedded-opentype"),
+    url("EthosNova-MediumItalic.woff2") format("woff2"),
+    url("EthosNova-MediumItalic.woff") format("woff"),
+    url("EthosNova-MediumItalic.svg#EthosNova-MediumItalic") format("svg");
+  font-weight: 500;
+  font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Ethos Nova';
-    src: url('EthosNova-Medium.eot');
-    src: url('EthosNova-Medium.eot?#iefix') format('embedded-opentype'),
-        url('EthosNova-Medium.woff2') format('woff2'),
-        url('EthosNova-Medium.woff') format('woff'),
-        url('EthosNova-Medium.svg#EthosNova-Medium') format('svg');
-    font-weight: 500;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Ethos Nova";
+  src: url("EthosNova-Medium.eot");
+  src:
+    url("EthosNova-Medium.eot?#iefix") format("embedded-opentype"),
+    url("EthosNova-Medium.woff2") format("woff2"),
+    url("EthosNova-Medium.woff") format("woff"),
+    url("EthosNova-Medium.svg#EthosNova-Medium") format("svg");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Ethos Nova';
-    src: url('EthosNova-Thin.eot');
-    src: url('EthosNova-Thin.eot?#iefix') format('embedded-opentype'),
-        url('EthosNova-Thin.woff2') format('woff2'),
-        url('EthosNova-Thin.woff') format('woff'),
-        url('EthosNova-Thin.svg#EthosNova-Thin') format('svg');
-    font-weight: 100;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Ethos Nova";
+  src: url("EthosNova-Thin.eot");
+  src:
+    url("EthosNova-Thin.eot?#iefix") format("embedded-opentype"),
+    url("EthosNova-Thin.woff2") format("woff2"),
+    url("EthosNova-Thin.woff") format("woff"),
+    url("EthosNova-Thin.svg#EthosNova-Thin") format("svg");
+  font-weight: 100;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Ethos Nova';
-    src: url('EthosNova-LightItalic.eot');
-    src: url('EthosNova-LightItalic.eot?#iefix') format('embedded-opentype'),
-        url('EthosNova-LightItalic.woff2') format('woff2'),
-        url('EthosNova-LightItalic.woff') format('woff'),
-        url('EthosNova-LightItalic.svg#EthosNova-LightItalic') format('svg');
-    font-weight: 300;
-    font-style: italic;
-    font-display: swap;
+  font-family: "Ethos Nova";
+  src: url("EthosNova-LightItalic.eot");
+  src:
+    url("EthosNova-LightItalic.eot?#iefix") format("embedded-opentype"),
+    url("EthosNova-LightItalic.woff2") format("woff2"),
+    url("EthosNova-LightItalic.woff") format("woff"),
+    url("EthosNova-LightItalic.svg#EthosNova-LightItalic") format("svg");
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Ethos Nova';
-    src: url('EthosNova-ThinItalic.eot');
-    src: url('EthosNova-ThinItalic.eot?#iefix') format('embedded-opentype'),
-        url('EthosNova-ThinItalic.woff2') format('woff2'),
-        url('EthosNova-ThinItalic.woff') format('woff'),
-        url('EthosNova-ThinItalic.svg#EthosNova-ThinItalic') format('svg');
-    font-weight: 100;
-    font-style: italic;
-    font-display: swap;
+  font-family: "Ethos Nova";
+  src: url("EthosNova-ThinItalic.eot");
+  src:
+    url("EthosNova-ThinItalic.eot?#iefix") format("embedded-opentype"),
+    url("EthosNova-ThinItalic.woff2") format("woff2"),
+    url("EthosNova-ThinItalic.woff") format("woff"),
+    url("EthosNova-ThinItalic.svg#EthosNova-ThinItalic") format("svg");
+  font-weight: 100;
+  font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Ethos Nova';
-    src: url('EthosNova-Light.eot');
-    src: url('EthosNova-Light.eot?#iefix') format('embedded-opentype'),
-        url('EthosNova-Light.woff2') format('woff2'),
-        url('EthosNova-Light.woff') format('woff'),
-        url('EthosNova-Light.svg#EthosNova-Light') format('svg');
-    font-weight: 300;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Ethos Nova";
+  src: url("EthosNova-Light.eot");
+  src:
+    url("EthosNova-Light.eot?#iefix") format("embedded-opentype"),
+    url("EthosNova-Light.woff2") format("woff2"),
+    url("EthosNova-Light.woff") format("woff"),
+    url("EthosNova-Light.svg#EthosNova-Light") format("svg");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Ethos Nova';
-    src: url('EthosNova-Italic.eot');
-    src: url('EthosNova-Italic.eot?#iefix') format('embedded-opentype'),
-        url('EthosNova-Italic.woff2') format('woff2'),
-        url('EthosNova-Italic.woff') format('woff'),
-        url('EthosNova-Italic.svg#EthosNova-Italic') format('svg');
-    font-weight: normal;
-    font-style: italic;
-    font-display: swap;
+  font-family: "Ethos Nova";
+  src: url("EthosNova-Italic.eot");
+  src:
+    url("EthosNova-Italic.eot?#iefix") format("embedded-opentype"),
+    url("EthosNova-Italic.woff2") format("woff2"),
+    url("EthosNova-Italic.woff") format("woff"),
+    url("EthosNova-Italic.svg#EthosNova-Italic") format("svg");
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
 }
 
 @font-face {
-    font-family: 'Ethos Nova';
-    src: url('EthosNova-Regular.eot');
-    src: url('EthosNova-Regular.eot?#iefix') format('embedded-opentype'),
-        url('EthosNova-Regular.woff2') format('woff2'),
-        url('EthosNova-Regular.woff') format('woff'),
-        url('EthosNova-Regular.svg#EthosNova-Regular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-    font-display: swap;
+  font-family: "Ethos Nova";
+  src: url("EthosNova-Regular.eot");
+  src:
+    url("EthosNova-Regular.eot?#iefix") format("embedded-opentype"),
+    url("EthosNova-Regular.woff2") format("woff2"),
+    url("EthosNova-Regular.woff") format("woff"),
+    url("EthosNova-Regular.svg#EthosNova-Regular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
 }
-

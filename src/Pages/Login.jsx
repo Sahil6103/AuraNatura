@@ -70,12 +70,16 @@ export const Login = () => {
     !email
       ? showToastAndFocus("Please enter Email!", emailInp, e)
       : !password
-      ? showToastAndFocus("Please enter password!", passwordInp, e)
-      : !emailRegex.test(email)
-      ? showToastAndFocus("Please enter a valid Email!", emailInp, e)
-      : !passwordRegex.test(password)
-      ? showToastAndFocus("Please enter a valid password!", passwordInp, e)
-      : getUser(e, email, password);
+        ? showToastAndFocus("Please enter password!", passwordInp, e)
+        : !emailRegex.test(email)
+          ? showToastAndFocus("Please enter a valid Email!", emailInp, e)
+          : !passwordRegex.test(password)
+            ? showToastAndFocus(
+                "Please enter a valid password!",
+                passwordInp,
+                e,
+              )
+            : getUser(e, email, password);
     // passing email and password as an argument in the function
     // Proceed if all validations pass
   };
@@ -86,7 +90,7 @@ export const Login = () => {
     setIsLoading(true);
     try {
       const res = await axios.get(
-        `https://673ebc2fa9bc276ec4b57911.mockapi.io/users`
+        `https://673ebc2fa9bc276ec4b57911.mockapi.io/users`,
       );
       const users = res.data;
       // console.log(users);

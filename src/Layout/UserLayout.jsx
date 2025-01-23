@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { json, Outlet } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import { Header } from "../Components/User/Home/Header";
 import { Footer } from "../Components/User/Home/Footer";
 import { Preloader } from "../Components/Common/Preloader";

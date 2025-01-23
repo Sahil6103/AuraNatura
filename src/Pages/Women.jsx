@@ -28,7 +28,7 @@ const Women = () => {
   const fetchWomanPerfume = async () => {
     const res = await axios("http://localhost:5000/products");
     const womanPerfume = res.data.filter(
-      (product) => product.proCategory.toLowerCase() === "woman"
+      (product) => product.proCategory.toLowerCase() === "woman",
     );
     setProducts(womanPerfume);
   };

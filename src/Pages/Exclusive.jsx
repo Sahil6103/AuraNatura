@@ -27,7 +27,7 @@ const Exclusive = () => {
   const fetchExclusivePerfume = async () => {
     const res = await axios("http://localhost:5000/products");
     const exclusivePerfume = res.data.filter(
-      (product) => product.proCategory.toLowerCase() === "exclusive"
+      (product) => product.proCategory.toLowerCase() === "exclusive",
     );
     setProducts(exclusivePerfume);
   };

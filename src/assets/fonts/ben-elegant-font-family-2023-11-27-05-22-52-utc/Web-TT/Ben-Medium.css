@@ -1,11 +1,12 @@
-/* Webfont: Ben-Medium */@font-face {
-    font-family: 'BenMed';
-    src: url('Ben-Medium.eot'); /* IE9 Compat Modes */
-    src: url('Ben-Medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-         url('Ben-Medium.woff') format('woff'), /* Modern Browsers */
-         url('Ben-Medium.ttf') format('truetype'); /* Safari, Android, iOS */
-             font-style: normal;
-    font-weight: normal;
-    text-rendering: optimizeLegibility;
+/* Webfont: Ben-Medium */
+@font-face {
+  font-family: "BenMed";
+  src: url("Ben-Medium.eot"); /* IE9 Compat Modes */
+  src:
+    url("Ben-Medium.eot?#iefix") format("embedded-opentype"),
+    /* IE6-IE8 */ url("Ben-Medium.woff") format("woff"),
+    /* Modern Browsers */ url("Ben-Medium.ttf") format("truetype"); /* Safari, Android, iOS */
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
 }
-

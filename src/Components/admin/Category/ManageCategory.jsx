@@ -34,7 +34,7 @@ export const ManageCategory = () => {
     try {
       await axios.delete(`http://localhost:5000/category/${id}`);
       setCategory((prevCategory) =>
-        prevCategory.filter((cate) => cate.id !== id)
+        prevCategory.filter((cate) => cate.id !== id),
       );
       toast.success("Category deleted successfully!");
     } catch (err) {

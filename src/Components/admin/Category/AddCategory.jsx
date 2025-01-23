@@ -33,8 +33,8 @@ export function AddCategory() {
     !categoryTitle
       ? showToastAndFocus("Enter Category Title!", categoryTitleInp, e)
       : !categoryDesc
-      ? showToastAndFocus("Enter Category Description!", categoryDescInp, e)
-      : saveCategory(e, categoryTitle, categoryDesc);
+        ? showToastAndFocus("Enter Category Description!", categoryDescInp, e)
+        : saveCategory(e, categoryTitle, categoryDesc);
   };
 
   const saveCategory = async (e, categoryTitle, categoryDesc) => {
@@ -49,7 +49,7 @@ export function AddCategory() {
     try {
       const res = await axios.post(
         "http://localhost:5000/category",
-        productObj
+        productObj,
       );
       toast.success("Category added successfully!");
       console.log(res);

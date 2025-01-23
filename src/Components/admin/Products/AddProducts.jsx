@@ -85,16 +85,16 @@ export function AddProducts() {
     !proTitle
       ? showToastAndFocus("Enter Product Title!", proTitleInp, e)
       : !proDesc
-      ? showToastAndFocus("Enter Product Description!", proDescInp, e)
-      : !proStock
-      ? showToastAndFocus("Enter Product Stock!", proStock, e)
-      : !proPrice
-      ? showToastAndFocus("Enter Product Price!", proPriceInp, e)
-      : !proCategory || proCategory === "Select Category"
-      ? showToastAndFocus("Select Product Category!", proCategoryInp, e)
-      : // : !proImages || proImages.length === 0
-        // ? showToastAndFocus("Add Products images!", proImgs, e)
-        saveProducts(e);
+        ? showToastAndFocus("Enter Product Description!", proDescInp, e)
+        : !proStock
+          ? showToastAndFocus("Enter Product Stock!", proStock, e)
+          : !proPrice
+            ? showToastAndFocus("Enter Product Price!", proPriceInp, e)
+            : !proCategory || proCategory === "Select Category"
+              ? showToastAndFocus("Select Product Category!", proCategoryInp, e)
+              : // : !proImages || proImages.length === 0
+                // ? showToastAndFocus("Add Products images!", proImgs, e)
+                saveProducts(e);
   };
 
   const saveProducts = async (e) => {
@@ -110,7 +110,7 @@ export function AddProducts() {
       if (selectedProduct && selectedProduct.id) {
         await axios.put(
           `http://localhost:5000/products/${selectedProduct.id}`,
-          productObj
+          productObj,
         );
         toast.success("Product updated successfully!");
       } else {
