@@ -1,7 +1,7 @@
 import React, { StrictMode, Suspense, useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 const LazyApp = React.lazy(() => import("./App"));
-import "../src/index.css";
+
 import { Preloader } from "./Components/Common/Preloader";
 
 const AppWithPreloader = () => {

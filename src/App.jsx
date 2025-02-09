@@ -4,6 +4,7 @@ import { AppRoutes } from "./Router/AppRoutes";
 import { Toaster } from "react-hot-toast";
 // import AOS from "aos";
 // import "aos/dist/aos.css";
+import "../src/assets/css/index.css";
 
 const App = () => {
   // useEffect(() => {
