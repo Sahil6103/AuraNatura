@@ -2,35 +2,41 @@ import React, { StrictMode, Suspense, useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 const LazyApp = React.lazy(() => import("./App"));
 
-import "../src/index.css"
+import "../src/index.css";
 import { Preloader } from "./Components/Common/Preloader";
 
 const AppWithPreloader = () => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const handleCompleteLoad = () => setIsLoaded(true);
+    // Function to check if everything is fully loaded
+    const checkIfLoaded = () => {
+      if (document.readyState === "complete") {
+        setIsLoaded(true);
+      }
+    };
 
-    window.addEventListener("load", handleCompleteLoad);
+    // If already loaded, set state immediately
+    if (document.readyState === "complete") {
+      setIsLoaded(true);
+    } else {
+      window.addEventListener("load", checkIfLoaded);
+    }
 
     return () => {
-      window.removeEventListener("load", handleCompleteLoad);
+      window.removeEventListener("load", checkIfLoaded);
     };
   }, []);
 
-  if (!isLoaded) {
-    return <Preloader />;
-  }
-
-  return (
-    <React.Suspense fallback={<Preloader />}>
+  return !isLoaded ? <Preloader /> : (
+    <Suspense fallback={<Preloader />}>
       <LazyApp />
-    </React.Suspense>
+    </Suspense>
   );
 };
 
 createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
+  <StrictMode>
     <AppWithPreloader />
-  </React.StrictMode>,
+  </StrictMode>
 );
