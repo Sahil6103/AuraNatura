@@ -4,7 +4,7 @@
 
 @font-face {
   font-family: sanantycs;
-  src: url(./assets/fonts/san-antycs/San\ Antycs-Regular.otf);
+  src: url(../fonts/san-antycs/San\ Antycs-Regular.otf);
 }
 
 /* @font-face {
@@ -14,17 +14,17 @@
 
 @font-face {
   font-family: gulia;
-  src: url(./assets/fonts/gullia-elegant-fonts-2023-11-27-05-28-19-utc/OpenType-TT/Gullia.ttf);
+  src: url(../fonts/gullia-elegant-fonts-2023-11-27-05-28-19-utc/OpenType-TT/Gullia.ttf);
 }
 
 @font-face {
   font-family: mirante;
-  src: url(./assets/fonts/mirante-elegant-font-family-2023-11-27-05-00-39-utc/OpenType-TT/Mirante-Medium.ttf);
+  src: url(../fonts/mirante-elegant-font-family-2023-11-27-05-00-39-utc/OpenType-TT/Mirante-Medium.ttf);
 }
 
 @font-face {
   font-family: oleana;
-  src: url(./assets/fonts/oleana-elegant-typeface-2023-11-27-05-03-44-utc/Oleana/Oleana.ttf);
+  src: url(../fonts/oleana-elegant-typeface-2023-11-27-05-03-44-utc/Oleana/Oleana.ttf);
 }
 
 /* @font-face {
@@ -34,22 +34,22 @@
 
 @font-face {
   font-family: renly;
-  src: url(./assets/fonts/renly-elegant-serif-2024-05-08-23-35-22-utc/Renly/Renly-Regular.otf);
+  src: url(../fonts/renly-elegant-serif-2024-05-08-23-35-22-utc/Renly/Renly-Regular.otf);
 }
 
 @font-face {
   font-family: todes;
-  src: url(./assets/fonts/todes/Todes\ Regular.ttf);
+  src: url(../fonts/todes/Todes\ Regular.ttf);
 }
 
 @font-face {
   font-family: twenty-century;
-  src: url(./assets/fonts/twentieth-century-for-kenmore-n/TwentiethCenturyforKenmoreN.ttf);
+  src: url(../fonts/twentieth-century-for-kenmore-n/TwentiethCenturyforKenmoreN.ttf);
 }
 
 @font-face {
   font-family: "brandon";
-  src: url("./assets/fonts/brandon-grotesque-font-family-1716364929-0/HvDTrial_Brandon_Grotesque_light-BF64a625c93e709.otf");
+  src: url("../fonts/brandon-grotesque-font-family-1716364929-0/HvDTrial_Brandon_Grotesque_light-BF64a625c93e709.otf");
 }
 
 ::selection {
@@ -103,7 +103,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  background-image: url(assets/img/hero/hero7.jpg);
+  background-image: url(../img/hero/hero7.jpg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -113,7 +113,7 @@
 
 @media (max-width: 768px) {
   .hero::before {
-    background-image: url(assets/img/hero/hero15.jpg);
+    background-image: url(../img/hero/hero15.jpg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
